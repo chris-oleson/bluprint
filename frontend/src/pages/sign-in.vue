@@ -45,7 +45,6 @@
                 text: "Welcome " + Store.name,
                 color: "var(--primary)"
             }
-            await Store.getAllAssetData()
             router.push('/dashboard')
         }
         catch(error) {
