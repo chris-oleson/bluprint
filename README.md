@@ -1,5 +1,5 @@
-# VuFi
-VuFi is a web application for automatically tracking and visualizing your financial data.
+# bluprint
+bluprint is a web application boilerplate for shipping new apps quickly
 
 ## Local development configuration
 
@@ -9,11 +9,11 @@ VuFi is a web application for automatically tracking and visualizing your financ
 - Install MySQL Server
 
 ### In the backend folder
-- Create a `.env` file copied from `.env.example` and enter your enviroment information
+- Create a `.env` file copied from `.env.example` and enter your environment information
 - Connect to the local MySQL Server and import `schema.sql` to install the DB schema
 
 ### In the frontend folder
-- Create a `.env` file copied from `.env.example` and enter your enviroment information
+- Create a `.env` file copied from `.env.example` and enter your environment information
 
 ## Production deployment configuration:
 
@@ -27,12 +27,6 @@ VuFi is a web application for automatically tracking and visualizing your financ
 - Install command: `npm install`
 - Build command: `npm run build`
 - Publish directory: `/dist`
-
-### Cron Jobs
-Set these commands to run nightly:
-- `curl -X POST 'https://api.vufi.app/auth/update'`
-- `curl -X POST 'https://api.vufi.app/currenices/update'`
-- `curl -X POST 'https://api.vufi.app/plaid/update'`
 
 ## Coding guidelines
 
