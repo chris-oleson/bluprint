@@ -15,6 +15,7 @@ import VerifyEmail from '../pages/verify-email'
 import ChangeName from '../pages/change-name'
 import DeleteAccount from '../pages/delete-account'
 import PrivacyPolicy from '../pages/privacy-policy'
+import Dashboard from '../pages/dashboard'
 
 export const router = createRouter({
     history: createWebHistory(),
@@ -139,6 +140,14 @@ export const router = createRouter({
             component: PrivacyPolicy,
             meta: {
                 title: 'Privacy Policy'
+            }
+        },
+        {
+            path: '/dashboard',
+            beforeEnter: [rejectUnauthorized],
+            component: Dashboard,
+            meta: {
+                title: 'Dashboard'
             }
         },
     ]

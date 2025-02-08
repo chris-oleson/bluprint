@@ -1,27 +1,9 @@
 /* Fonts */
 @font-face {
     font-family: "Roboto";
-    font-weight: 500;
+    font-weight: 100 900;
     font-display: swap;
-    src: url(./assets/fonts/Roboto-Medium.ttf);
-}
-@font-face {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-display: swap;
-    src: url(./assets/fonts/Roboto-Regular.ttf);
-}
-@font-face {
-    font-family: "Roboto";
-    font-weight: 300;
-    font-display: swap;
-    src: url(./assets/fonts/Roboto-Light.ttf);
-}
-@font-face {
-    font-family: "Roboto";
-    font-weight: 100;
-    font-display: swap;
-    src: url(./assets/fonts/Roboto-Thin.ttf);
+    src: url(./assets/fonts/roboto-variable.ttf);
 }
 
 /* Light mode theme */
@@ -66,7 +48,7 @@ body {
 /* Text */
 .title {
     font-size: 3em;
-    font-weight: 100;
+    font-weight: 400;
     color: var(--text);
     margin: 0;
 }
@@ -96,13 +78,14 @@ div {
     letter-spacing: 1.25px;
     display: block;
     font-size: 1em;
+    font-weight: 500;
     text-transform: uppercase;
     text-align: center;
     text-decoration: inherit;
     min-width: fit-content;
     border: none;
     border-radius: .5em;
-    transition-duration: .25s;
+    transition-duration: .2s;
     line-height: 1em;
     user-select: none;
     outline: none;
@@ -185,7 +168,7 @@ div {
     padding: 0 .5rem;
     font-size: 1rem;
     line-height: 1rem;
-    transition-duration: .25s;
+    transition-duration: .2s;
     &:hover, &:focus {
         border-color: var(--text);
     }
@@ -219,7 +202,7 @@ div {
     padding: 0 .5rem;
     font-size: 1rem;
     line-height: 1rem;
-    transition-duration: .25s;
+    transition-duration: .2s;
     &:hover, &:focus {
         border-color: var(--text);
         cursor: pointer;

@@ -7,7 +7,7 @@
         </div>
 
         <div class="card">
-            <img class="image" src="../assets/images/bluprint.jpg"/>
+            <img class="image" src="../assets/images/bluprint.webp"/>
         </div>
     </div>
 
