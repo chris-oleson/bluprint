@@ -1,11 +1,11 @@
 <template>
     <div class="layout">
-        <dataTable title="Inventory" :headers="tableHeaders" :data="Store.tableData"/>
+        <crud-table title="Inventory" :headers="tableHeaders" :data="Store.tableData"/>
     </div>
 </template>
 
 <script setup>
-    import dataTable from '../components/data-table'
+    import crudTable from '../components/crud-table'
     import Store from '../utilities/store'
 
     const tableHeaders = [
