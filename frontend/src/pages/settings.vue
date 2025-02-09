@@ -8,18 +8,6 @@
                 <button class="border button" :class="{'selected': Store.theme == 'dark'}" @click="updateTheme('dark')">Dark</button>
             </div>
 
-            <label class="label">Currency
-                <select class="dropdown" v-model="Store.currency" @change="savePreferences">
-                    <option v-for="currency in currencies" :key="currency">{{ currency }}</option>
-                </select>
-            </label>
-
-            <label class="label">Items Per Page
-                <select class="dropdown" v-model="Store.itemsPerPage" @change="savePreferences">
-                    <option v-for="option in paginationOptions" :key="option">{{ option }}</option>
-                </select>
-            </label>
-
             <div>Account</div>
             <router-link class="border button" to="/change-password">Change Password</router-link>
             <router-link class="border button" to="/change-email">Change Email</router-link>

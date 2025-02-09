@@ -19,7 +19,7 @@
             <router-link v-if="!Store.isLoggedIn" to="/sign-up" class="primary button">Sign Up</router-link>
         </template>
 
-        <button v-if="windowWidth <= 1024" class="big simple icon button" @click="showMenu = !showMenu"><menu-icon/></button>
+        <button v-if="windowWidth <= 1024" class="big simple icon button" @click="showMenu = !showMenu"><i class="mdi mdi-menu"/></button>
         <div v-if="showMenu" class="vertical list" @click="showMenu = false">
             <template v-if="Store.showSidebar">
                 <router-link to="/dashboard" class="big background button">Dashboard</router-link>
@@ -51,7 +51,6 @@
 
 <script setup>
     import { ref } from 'vue'
-    import MenuIcon from '../assets/icons/menu-icon'
     import Store from '../utilities/store'
     import useWindowWidth from '../utilities/use-window-width'
     const windowWidth = useWindowWidth()

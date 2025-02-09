@@ -11,9 +11,10 @@
     --primary: #085292;
     --secondary: #81b3d5;
     --text: #000000;
-    --low-accent: #dfdfdf;
-    --accent: #c0c0c0;
-    --high-accent: #5e5e5e;
+    --text-disabled: rgba(0, 0, 0, 0.4);
+    --text-accent: rgba(0, 0, 0, 0.7);
+    --accent: rgba(0, 0, 0, 0.2);
+    --low-accent: rgba(0, 0, 0, 0.1);
     --background: #ffffff;
     --success: #83af50;
     --warning: #ffc107;
@@ -26,9 +27,10 @@
 [data-theme="dark"] {
     --secondary: #162a3d;
     --text: #ffffff;
-    --low-accent: #3b3b3b;
-    --accent: #5a5a5a;
-    --high-accent: #9c9c9c;
+    --text-accent: rgba(255, 255, 255, 0.6);
+    --text-disabled: rgba(255, 255, 255, 0.5);
+    --accent: rgba(255, 255, 255, 0.3);
+    --low-accent: rgba(255, 255, 255, 0.2);
     --background: #141414;
     --error: #7c2323;
 }
@@ -107,8 +109,9 @@ div {
         background-color: var(--background);
         &.selected, &:active {
             background-color: var(--accent);
+            border-color: transparent;
         }
-        &:hover:not(.disabled, .selected), &:focus:not(.disabled, .selected) {
+        &:is(:hover, :focus):not(.disabled, .selected) {
             border: 1px solid var(--text);
         }
         &.error {
@@ -122,24 +125,26 @@ div {
         }
     }
     &.background {
-        color: var(--high-accent);
-        background-color: var(--background);
+        color: var(--text-accent);
+        background-color: transparent;
         text-transform: none;
         text-align: left;
         letter-spacing: normal;
         border-radius: 0;
-        &:is(:hover, :focus, .selected):not(.disabled) {
-            background-color: var(--low-accent);
+        &:is(:hover, :focus):not(.disabled, .selected) {
             color: var(--text);
+        }
+        &.selected, &:active {
+            color: var(--text);
+            background-color: var(--low-accent);
         }
     }
     &.simple {
-        color: var(--text);
-        opacity: .6;
+        color: var(--text-accent);
         padding: 0;
         background-color: transparent;
         &:is(:hover, :focus, .selected):not(.disabled) {
-            opacity: 1;
+            color: var(--text);
         }
     }
     &.selected {
@@ -174,10 +179,10 @@ div {
         border-color: var(--text);
     }
     &:invalid {
-        color: var(--high-accent);
+        color: var(--text-disabled);
     }
     &::placeholder {
-        color: var(--high-accent);
+        color: var(--text-disabled);
     }
     &.big {
         height: 3rem;
@@ -209,7 +214,7 @@ div {
         cursor: pointer;
     }
     &:invalid {
-        color: var(--high-accent);
+        color: var(--text-disabled);
     }
     &.big {
         height: 3rem;
@@ -243,7 +248,7 @@ div {
         right: 0;
         border: 1px solid var(--accent);
         border-radius: .5rem;
-        transition-duration: .25s;
+        transition-duration: .2s;
         cursor: pointer;
         line-height: 95%;
         text-align: center;
@@ -281,9 +286,13 @@ div {
     display: flex;
     align-items: center;
     padding: .5em;
-    & svg {
-        width: 1.5em;
-        vertical-align: middle;
+    --icon-size: 1.5rem;
+    & i {
+        font-size: var(--icon-size);
+        height: var(--icon-size);
+        width: var(--icon-size);
+        line-height: var(--icon-size);
+        display: block;
     }
     &:not(.text) {
         border-radius: 50%;
@@ -291,8 +300,8 @@ div {
 }
 .big.icon:not(.text) {
     padding: .5em;
-    & svg {
-        width: 2em;
+    & i {
+        --icon-size: 2rem;
     }
 }
 
@@ -459,6 +468,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     & thead {
+        border-bottom: 1px solid var(--low-accent);
         & th {
             padding: 1em .5em;
             text-wrap: nowrap;
@@ -467,12 +477,13 @@ table {
     }
     & tbody {
         & tr {
+            border-bottom: 1px solid var(--low-accent);
             &:hover {
                 background-color: var(--low-accent);
+                border-color: transparent;
             }
             & td {
                 padding: 1em .5em;
-                border-top: 1px solid var(--low-accent);
                 text-wrap: nowrap;
             }
         }

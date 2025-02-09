@@ -1,34 +1,44 @@
 <template>
     <div class="sidebar">
         <router-link class="big background icon text button" :class="{'selected': route.path == '/dashboard'}" to="/dashboard">
-            <view-dashboard-icon/>
+            <i class="mdi mdi-view-dashboard"/>
             Dashboard
         </router-link>
 
-        <router-link class="big background icon text button" :class="{'selected': route.path == '/assets'}" to="/assets">
-            <cash-multiple-icon/>
-            Assets
+        <router-link class="big background icon text button" :class="{'selected': route.path == '/tables'}" to="/tables">
+            <i class="mdi mdi-table"/>
+            Tables
         </router-link>
 
-        <router-link class="big background icon text button" :class="{'selected': route.path == '/liabilities'}" to="/liabilities">
-            <credit-card-multiple-icon/>
-            Liabilities
+        <router-link class="big background icon text button" :class="{'selected': route.path == '/forms'}" to="/forms">
+            <i class="mdi mdi-format-align-left"/>
+            Forms
+        </router-link>
+
+        <router-link class="big background icon text button" :class="{'selected': route.path == '/custom-page-1'}" to="/custom-page-1">
+            <i class="mdi mdi-note"/>
+            Custom Page 1
+        </router-link>
+
+        <router-link class="big background icon text button" :class="{'selected': route.path == '/custom-page-2'}" to="/custom-page-2">
+            <i class="mdi mdi-note"/>
+            Custom Page 2
         </router-link>
 
         <div class="vertical spacer"></div>
 
         <router-link class="big background icon text button" to="/contact">
-            <email-icon/>
+            <i class="mdi mdi-email"/>
             Support
         </router-link>
 
         <router-link class="big background icon text button" :class="{'selected': route.path == '/settings'}" to="/settings">
-            <cog-icon/>
+            <i class="mdi mdi-cog"/>
             Settings
         </router-link>
 
         <button class="big background icon text button" @click="Store.logOut(router, '/')">
-            <logout-icon/>
+            <i class="mdi mdi-logout"/>
             Sign Out
         </button>
     </div>
@@ -37,12 +47,6 @@
 <script setup>
 import Store from '../utilities/store'
     import { useRouter, useRoute } from 'vue-router'
-    import ViewDashboardIcon from '../assets/icons/view-dashboard-icon'
-    import CreditCardMultipleIcon from '../assets/icons/credit-card-multiple-icon'
-    import CashMultipleIcon from '../assets/icons/cash-multiple-icon'
-    import CogIcon from '../assets/icons/cog-icon'
-    import LogoutIcon from '../assets/icons/logout-icon'
-    import EmailIcon from '../assets/icons/email-icon'
     const route = useRoute()
     const router = useRouter()
 </script>
@@ -63,7 +67,7 @@ import Store from '../utilities/store'
     .background.button {
         border-radius: .5rem;
     }
-    svg {
-        margin-right: 1em;
+    i {
+        margin-right: 1rem;
     }
 </style>

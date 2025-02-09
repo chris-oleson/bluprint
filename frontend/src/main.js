@@ -10,4 +10,7 @@ app.use(router)
 // CSS
 import './style.css'
 
+// Icons
+import '@mdi/font/css/materialdesignicons.css'
+
 app.mount('#app')
