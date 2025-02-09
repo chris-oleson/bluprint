@@ -9,9 +9,9 @@
             </div>
 
             <div>Account</div>
-            <router-link class="border button" to="/change-password">Change Password</router-link>
-            <router-link class="border button" to="/change-email">Change Email</router-link>
             <router-link class="border button" to="/change-name">Change Name</router-link>
+            <router-link class="border button" to="/change-email">Change Email</router-link>
+            <router-link class="border button" to="/change-password">Change Password</router-link>
             <button class="border error button" @click="showHistoryDialog = true">Delete Historic Data</button>
             <router-link class="border error button" to="/delete-account">Delete Account</router-link>
 
@@ -40,8 +40,6 @@
     import HTTP from '../utilities/http'
     import Store from '../utilities/store'
     const showHistoryDialog = ref(false)
-    const paginationOptions = [ 5, 10, 25, 50, 100 ]
-    const currencies = Object.keys(Store.currencyRates)
     Store.showSidebar = true;
 
     function updateTheme(theme) {

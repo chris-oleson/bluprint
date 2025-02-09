@@ -16,6 +16,7 @@ import ChangeName from '../pages/change-name'
 import DeleteAccount from '../pages/delete-account'
 import PrivacyPolicy from '../pages/privacy-policy'
 import Dashboard from '../pages/dashboard'
+import Tables from '../pages/tables'
 
 export const router = createRouter({
     history: createWebHistory(),
@@ -148,6 +149,14 @@ export const router = createRouter({
             component: Dashboard,
             meta: {
                 title: 'Dashboard'
+            }
+        },
+        {
+            path: '/tables',
+            beforeEnter: [rejectUnauthorized],
+            component: Tables,
+            meta: {
+                title: 'Tables'
             }
         },
     ]

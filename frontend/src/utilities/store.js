@@ -7,7 +7,6 @@ const defaultState = {
     isLoggedIn: false,
     subscriptionStatus: 'Free',
     allowEmails: false,
-    reauthenticate: false,
     theme: 'system',
     itemsPerPage: 5,
     currency: 'USD',
@@ -25,48 +24,30 @@ const defaultState = {
     activeTheme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
     showSidebar: false,
 
-    incomeData: [
+    tableData: [
         {
-            name: 'Salary',
-            value: 60000,
-            currency: 'USD'
+            id: 1,
+            name: 'Apples',
+            type: 'Fruit',
+            quantity: 4
         },
         {
-            name: 'Side Business',
-            value: 10000,
-            currency: 'USD'
-        },
-    ],
-    expenseData: [
-        {
-            name: 'Federal Income Tax',
-            value: 12300,
-            currency: 'USD'
+            id: 2,
+            name: 'Bananas',
+            type: 'Fruit',
+            quantity: 23
         },
         {
-            name: 'State Income Tax',
-            value: 900,
-            currency: 'USD'
+            id: 7,
+            name: 'Pancakes',
+            type: 'Pastry',
+            quantity: 14
         },
         {
-            name: 'Rent',
-            value: 2000,
-            currency: 'USD'
-        },
-        {
-            name: 'Utilities',
-            value: 100,
-            currency: 'USD'
-        },
-        {
-            name: 'Groceries',
-            value: 500,
-            currency: 'USD'
-        },
-        {
-            name: 'Ammo',
-            value: 500,
-            currency: 'USD'
+            id: 4,
+            name: 'Onions',
+            type: 'Vegetable',
+            quantity: 7
         },
     ]
 }

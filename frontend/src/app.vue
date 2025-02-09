@@ -2,10 +2,6 @@
     <TopBar/>
     <SideBar v-if="Store.showSidebar && windowWidth > 1024"/>
     <div class="content" :class="{'full-width': !Store.showSidebar || windowWidth <= 1024}">
-        <div v-if="Store.showSidebar && Store.reauthenticate" class="banner">
-            <div>One or more of your accounts needs to be reauthenticated to continue updating.</div>
-        </div>
-
         <router-view/>
 
         <div v-if="showNotification" class="notification">

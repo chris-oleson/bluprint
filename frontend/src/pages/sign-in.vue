@@ -38,7 +38,6 @@
             Store.allowEmails = response.allow_emails == 1
             Store.theme = response.theme
             Store.subscriptionStatus = response.subscription_status
-            Store.reauthenticate = response.reauthenticate
             Store.name = response.name
             Store.isLoggedIn = true
             Store.notification = {
