@@ -59,8 +59,6 @@ import Store from '../utilities/store'
         flex-direction: column;
         gap: .5em;
         padding: .5em;
-        box-shadow: var(--shadow);
-        border-right: 1px solid var(--low-accent);
     }
     .background.button {
         border-radius: .5rem;

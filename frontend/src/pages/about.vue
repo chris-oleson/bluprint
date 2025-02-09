@@ -31,10 +31,14 @@
     </div>
 
     <div class="secondary full width section">
-        <h1 class="title">The VENoM Stack</h1>
+        <h1 class="title">Tech Stack</h1>
         <div class="card">
             <h2 class="subtitle">Vue</h2>
             <div>Frontend framework</div>
+        </div>
+        <div class="card">
+            <h2 class="subtitle">Vite</h2>
+            <div>Frontend build tool</div>
         </div>
         <div class="card">
             <h2 class="subtitle">Express</h2>
@@ -47,6 +51,14 @@
         <div class="card">
             <h2 class="subtitle">MySQL</h2>
             <div>Database</div>
+        </div>
+        <div class="card">
+            <h2 class="subtitle">Postmark</h2>
+            <div>Email delivery</div>
+        </div>
+        <div class="card">
+            <h2 class="subtitle">Stripe</h2>
+            <div>Payment processing</div>
         </div>
     </div>
 </template>
