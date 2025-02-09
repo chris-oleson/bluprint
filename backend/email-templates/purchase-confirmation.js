@@ -1,7 +1,7 @@
 export default {
     subject: 'Thank you for your purchase!',
 
-    getHTMLBody(name) {
+    getHTMLBody(name, color) {
         return `
             <!DOCTYPE html>
             <html lang="en">
@@ -23,11 +23,11 @@ export default {
                                             <span style="display: inline-block; vertical-align: middle;">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="-20 0 540 500" xml:space="preserve">
                                                     <g transform="matrix(1.1260498114 0 0 1.1260497986 249.1473007277 251.0816884163)" id="e8hgDyjwIKMcUgWZ-pPu9">
-                                                        <path style="stroke: #83af50; stroke-width: 3px; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform="translate(0, 0)" d="M -216.8175 -129.70275 C -150.45249 -129.70275 -173.83107 128.21579999999997 -92.38311 129.7241 C -19.41991 131.07527 -36.46667 -129.62418 32.05127999999999 -129.70275 C 100.56922999999999 -129.78131000000002 75.03770999999999 7.929869999999994 128.5822 9.438169999999985 C 182.12669 10.946469999999985 155.73152 -131.96519 216.81749000000002 -129.70275" />
+                                                        <path style="stroke: ${color}; stroke-width: 3px; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform="translate(0, 0)" d="M -216.8175 -129.70275 C -150.45249 -129.70275 -173.83107 128.21579999999997 -92.38311 129.7241 C -19.41991 131.07527 -36.46667 -129.62418 32.05127999999999 -129.70275 C 100.56922999999999 -129.78131000000002 75.03770999999999 7.929869999999994 128.5822 9.438169999999985 C 182.12669 10.946469999999985 155.73152 -131.96519 216.81749000000002 -129.70275" />
                                                     </g>
                                                 </svg>
                                             </span>
-                                            <span style="display: inline-block; vertical-align: middle; font-size: 1.5rem; font-weight: 300;">VuFi</span>
+                                            <span style="display: inline-block; vertical-align: middle; font-size: 1.5rem; font-weight: 300;">blueprint</span>
                                         </td>
                                     </tr>
                                     <tr>

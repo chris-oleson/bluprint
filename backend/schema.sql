@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.41, for Linux (x86_64)
 --
--- Host: localhost    Database: vufi-db
+-- Host: localhost    Database: bluprint-db
 -- ------------------------------------------------------
 -- Server version	8.0.41-0ubuntu0.24.04.1
 
@@ -157,7 +157,7 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping routines for database 'vufi-db'
+-- Dumping routines for database 'bluprint-db'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

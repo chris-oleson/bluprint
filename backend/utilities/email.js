@@ -6,6 +6,7 @@ import Postmark from 'postmark'
 const client = process.env.POSTMARK_API_KEY ? new Postmark.ServerClient(process.env.POSTMARK_API_KEY) : null
 
 const from = "bluprint Support <support@bluprint.app>"
+const color = '#085292'
 
 export default {
     validate(email) {
@@ -17,7 +18,7 @@ export default {
             "From": from,
             "To": email,
             "Subject": Welcome.subject,
-            "HtmlBody": Welcome.getHTMLBody(name, email, token),
+            "HtmlBody": Welcome.getHTMLBody(name, email, token, color),
             "TextBody": Welcome.getTextBody(name, email, token),
             "MessageStream": "outbound"
         })
@@ -28,7 +29,7 @@ export default {
             "From": from,
             "To": email,
             "Subject": PasswordReset.subject,
-            "HtmlBody": PasswordReset.getHTMLBody(name, token),
+            "HtmlBody": PasswordReset.getHTMLBody(name, token, color),
             "TextBody": PasswordReset.getTextBody(name, token),
             "MessageStream": "outbound"
         })
@@ -39,7 +40,7 @@ export default {
             "From": from,
             "To": email,
             "Subject": PurchaseConfirmation.subject,
-            "HtmlBody": PurchaseConfirmation.getHTMLBody(name),
+            "HtmlBody": PurchaseConfirmation.getHTMLBody(name, color),
             "TextBody": PurchaseConfirmation.getTextBody(name),
             "MessageStream": "outbound"
         })

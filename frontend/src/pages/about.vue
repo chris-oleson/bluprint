@@ -31,26 +31,22 @@
     </div>
 
     <div class="secondary full width section">
-        <h1 class="title">Tech Stack</h1>
-        <div class="card">
-            <h2 class="subtitle">MySQL</h2>
-            <div>Database</div>
-        </div>
+        <h1 class="title">The VENoM Stack</h1>
         <div class="card">
             <h2 class="subtitle">Vue</h2>
             <div>Frontend framework</div>
         </div>
         <div class="card">
-            <h2 class="subtitle">Vite</h2>
-            <div>Frontend build tool</div>
+            <h2 class="subtitle">Express</h2>
+            <div>Backend framework</div>
         </div>
         <div class="card">
             <h2 class="subtitle">Node</h2>
             <div>Web server runtime</div>
         </div>
         <div class="card">
-            <h2 class="subtitle">Express</h2>
-            <div>Backend framework</div>
+            <h2 class="subtitle">MySQL</h2>
+            <div>Database</div>
         </div>
     </div>
 </template>

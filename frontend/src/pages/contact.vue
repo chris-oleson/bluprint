@@ -10,5 +10,5 @@
 <script setup>
     import Store from '../utilities/store'
     Store.showSidebar = false
-    const email = 'example.email.com'
+    const email = 'support@bluprint.app'
 </script>

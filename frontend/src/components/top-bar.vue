@@ -14,7 +14,7 @@
             <router-link to="/contact" class="simple button">Contact</router-link>
             <div class="horizontal spacer"></div>
             <router-link v-if="Store.isLoggedIn" to="/dashboard" class="simple button">Dashboard</router-link>
-            <button @click="Store.logOut(router, '/')" class="simple button" style="margin-right: 1em">Sign Out</button>
+            <button v-if="Store.isLoggedIn" @click="Store.logOut(router, '/')" class="simple button" style="margin-right: 1em">Sign Out</button>
             <router-link v-if="!Store.isLoggedIn" to="/sign-in" class="simple button">Sign In</router-link>
             <router-link v-if="!Store.isLoggedIn" to="/sign-up" class="primary button">Sign Up</router-link>
         </template>

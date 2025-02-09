@@ -135,7 +135,7 @@ div {
     }
     &.simple {
         color: var(--text);
-        opacity: .5;
+        opacity: .6;
         padding: 0;
         background-color: transparent;
         &:is(:hover, :focus, .selected):not(.disabled) {

@@ -14,7 +14,7 @@
     <div class="secondary section">
         <h2 class="title">Built-in Authentication</h2>
         <h2 class="subtitle">
-            bluprint already has a full backend with user management.
+            bluprint already has a full backend with authentication and a database
         </h2>
     </div>
 

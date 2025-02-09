@@ -1,5 +1,5 @@
 {
-    "name": "vufi-backend",
+    "name": "bluprint-backend",
     "scripts": {
         "dev": "nodemon --env-file=.env index.js"
     },

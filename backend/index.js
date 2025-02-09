@@ -11,7 +11,7 @@ app.use(cookieParser())
 // CORS
 import cors from 'cors'
 var corsOptions = {
-    origin: process.env.VUFI_CLIENT,
+    origin: process.env.CLIENT_URL,
     credentials: true,
 }
 app.use(cors(corsOptions))
