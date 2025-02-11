@@ -1,6 +1,6 @@
 <template>
     <div class="layout">
-        <crud-table title="Inventory" :headers="tableHeaders" :data="Store.tableData"/>
+        <crud-table title="CRUD Table" :headers="tableHeaders" :data="Store.tableData"/>
     </div>
 </template>
 
