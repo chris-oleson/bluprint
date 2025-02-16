@@ -7,26 +7,13 @@ bluprint is a web application boilerplate for shipping new apps quickly
 - Install the version of node specified in `package.json`
 - Install the version of npm specified in `package.json`
 - Install MySQL Server
-
-### In the backend folder
 - Create a `.env` file copied from `.env.example` and enter your environment information
-- Connect to the local MySQL Server and import `schema.sql` to install the DB schema
-
-### In the frontend folder
-- Create a `.env` file copied from `.env.example` and enter your environment information
+- Run command `npm install`
+- Run command `npm run dev`
 
 ## Production deployment configuration:
-
-### Backend
-- Base directory: `/backend`
 - Install command: `npm install`
-- Run command: `node /index.js`
-
-### Frontend
-- Base directory: `/frontend`
-- Install command: `npm install`
-- Build command: `npm run build`
-- Publish directory: `/dist`
+- Run command: `npm run build`
 
 ## Coding guidelines
 
