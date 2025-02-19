@@ -1,5 +1,5 @@
 <template>
-    <top-bar></top-bar>
+    <landing-header></landing-header>
     <div class="content">
         <slot></slot>
     </div>

@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
     compatibilityDate: '2025-02-10',
     app: {
@@ -15,5 +16,6 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
+        '@nuxt/eslint'
     ]
 })

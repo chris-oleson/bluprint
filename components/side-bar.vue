@@ -46,7 +46,6 @@
 
 <script setup>
     const route = useRoute()
-    const router = useRouter()
     const store = useStore()
 </script>
 

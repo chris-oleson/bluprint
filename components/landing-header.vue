@@ -11,7 +11,9 @@
         <NuxtLink to="/about" class="simple button">About</NuxtLink>
         <NuxtLink to="/pricing" class="simple button">Pricing</NuxtLink>
         <NuxtLink to="/contact" class="simple button">Contact</NuxtLink>
+
         <div class="horizontal spacer"></div>
+
         <template v-if="store.isLoggedIn">
             <router-link to="/dashboard" class="simple button">Dashboard</router-link>
             <button @click="store.logOut('/')" class="simple button">Sign Out</button>

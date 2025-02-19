@@ -1,6 +1,6 @@
 <template>
-    <top-bar></top-bar>
-    <side-bar></side-bar>
+    <app-header/>
+    <side-bar/>
     <div class="content">
         <slot></slot>
     </div>

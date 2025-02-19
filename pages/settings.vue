@@ -21,7 +21,7 @@
 
             <label class="label">
                 Send me updates and promotions
-                <input type="checkbox" v-model="store.allowEmails" class="checkbox" @change="savePreferences"/>
+                <input v-model="store.allowEmails" type="checkbox" class="checkbox" @change="savePreferences()">
             </label>
         </div>
 
@@ -39,7 +39,7 @@
     useHead ({ title: 'Settings - bluprint' })
     definePageMeta({
         middleware: 'require-authentication',
-        layout: 'show-sidebar'
+        layout: 'app-layout',
     })
     const store = useStore()
     const colorMode = useColorMode()
@@ -65,8 +65,6 @@
             method: 'PATCH',
             body: {
                 theme: colorMode.preference,
-                currency: store.currency,
-                itemsPerPage: store.itemsPerPage,
                 allowEmails: store.allowEmails
             }
         })

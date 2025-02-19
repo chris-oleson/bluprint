@@ -1,10 +1,10 @@
 <template>
     <div class="full height section">
-        <div v-if="loading" class="loading spinner"></div>
+        <div v-if="loading" class="loading spinner"/>
         <div v-else-if="errorMessage && route.query.t" class="error">{{ errorMessage }}</div>
         <div v-else class="form">
-            <input type="text" class="big text field" :class="{'error': errorMessage}" placeholder="Email" v-model="email"/>
-            <input type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Password" v-model="password" @keyup.enter="login"/>
+            <input v-model="email" type="text" class="big text field" :class="{'error': errorMessage}" placeholder="Email">
+            <input v-model="password" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Password" @keyup.enter="login">
             <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
             <button class="big primary button" @click="login">Sign In</button>
             <button v-if="errorMessage == 'This account has not been verified'" class="simple button" @click="resend">Resend Verification</button>
@@ -37,7 +37,7 @@
             })
             store.isLoggedIn = true
             colorMode.preference = response.theme
-            // store.allowEmails = response.allow_emails == 1
+            store.allowEmails = response.allow_emails == 1
             // store.subscriptionStatus = response.subscription_status
             // store.name = response.name
             // store.notification = {

@@ -7,6 +7,6 @@
 
     definePageMeta({
         middleware: 'require-authentication',
-        layout: 'show-sidebar',
+        layout: 'app-layout',
     })
 </script>

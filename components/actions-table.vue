@@ -3,7 +3,7 @@
         <div class="toolbar">
             <h1 class="title">{{ title }}</h1>
             <div class="horizontal spacer"></div>
-            <button class="border icon button" @click="newItem(); showDialog = true">
+            <button class="border icon button" @click="newItem()">
                 <Icon name="ic:baseline-plus"/>
             </button>
         </div>

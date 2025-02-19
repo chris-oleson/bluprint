@@ -9,7 +9,7 @@
     useHead ({ title: 'Tables - bluprint' })
     definePageMeta({
         middleware: 'require-authentication',
-        layout: 'show-sidebar',
+        layout: 'app-layout',
     })
 
     const tableHeaders = [
