@@ -321,7 +321,7 @@ div {
 }
 
 /* Layouts */
-.layout {
+.dashboard {
     background-color: var(--low-accent);
     min-height: 100%;
     padding: .5em;

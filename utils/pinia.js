@@ -4,6 +4,8 @@ export const useStore = defineStore('store', {
     state: () => ({
         isLoggedIn: false,
         allowEmails: false,
+        subscriptionStatus: 'free',
+        name: ''
     }),
     actions: {
         async logOut(redirectPath) {

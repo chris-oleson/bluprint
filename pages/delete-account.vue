@@ -1,9 +1,9 @@
 <template>
     <div class="full height section">
-        <div v-if="loading" class="loading spinner"></div>
+        <div v-if="loading" class="loading spinner"/>
         <div v-else class="form">
             <h1 class="subtitle">Delete Account</h1>
-            <input type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Password" v-model="password" @keyup.enter="deleteAccount"/>
+            <input v-model="password" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Password" @keyup.enter="deleteAccount">
             <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
             <button class="big primary error button" @click="deleteAccount">Delete Account</button>
             <div>Deleting your account will also cancel any active subscriptions</div>

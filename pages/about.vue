@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="secondary section">
         <h1 class="title">Hi, I'm Chris.</h1>
         <p>
@@ -53,35 +54,36 @@
             <div>Payment processing</div>
         </div>
     </div>
+</div>
 </template>
 
 <script setup>
-    useHead ({ title: 'About - bluprint' })
+useHead ({ title: 'About - bluprint' })
 </script>
 
 <style scoped>
-    .faq {
-        & .subtitle {
-            width: 100%;
-            text-align: left;
-        }
+.faq {
+    & .subtitle {
+        width: 100%;
+        text-align: left;
     }
+}
 
-    .full.width {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1em;
-        & .title {
-            flex: 100%;
-            margin-bottom: 1em;;
-        }
-        & .card {
-            flex: 1;
-            min-width: 17em;
-            height: 10em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+.full.width {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    & .title {
+        flex: 100%;
+        margin-bottom: 1em;;
     }
+    & .card {
+        flex: 1;
+        min-width: 17em;
+        height: 10em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 </style>

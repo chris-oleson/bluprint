@@ -5,11 +5,11 @@
             <h2 class="subtitle">bluprint</h2>
         </NuxtLink>
 
-        <div class="horizontal spacer"></div>
+        <div class="horizontal spacer"/>
 
         <template v-if="store.isLoggedIn">
             <router-link to="/dashboard" class="simple button">Dashboard</router-link>
-            <button @click="store.logOut('/')" class="simple button">Sign Out</button>
+            <button class="simple button" @click="store.logOut('/')">Sign Out</button>
         </template>
         <template v-else>
             <NuxtLink to="/sign-in" class="simple button">Sign In</NuxtLink>

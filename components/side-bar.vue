@@ -25,7 +25,7 @@
             Custom Page 2
         </NuxtLink>
 
-        <div class="vertical spacer"></div>
+        <div class="vertical spacer"/>
 
         <NuxtLink class="big background icon text button" to="/contact">
             <Icon name="ic:baseline-mail"/>

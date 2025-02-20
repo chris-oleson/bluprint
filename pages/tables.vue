@@ -1,7 +1,7 @@
 <template>
-    <div class="layout">
-        <actions-table title="Actions Table" :headers="tableHeaders" :data="tableData" itemsPerPage="5"/>
-        <display-table title="Display Table" :headers="tableHeaders" :data="tableData" itemsPerPage="5"/>
+    <div class="dashboard">
+        <actions-table title="Actions Table" :headers="tableHeaders" :items-per-page="5"/>
+        <display-table title="Display Table" :headers="tableHeaders" :data="tableData" :items-per-page="5"/>
     </div>
 </template>
 

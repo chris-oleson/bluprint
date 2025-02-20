@@ -2,7 +2,7 @@
     <div class="card">
         <div class="toolbar">
             <h1 class="title">{{ title }}</h1>
-            <div class="horizontal spacer"></div>
+            <div class="horizontal spacer"/>
             <button class="border icon button" @click="newItem()">
                 <Icon name="ic:baseline-plus"/>
             </button>
@@ -42,20 +42,20 @@
         </template>
 
         <template v-else>
-            <div class="horizontal divider"></div>
-            <div style="padding-top: 1em;">No {{ type.toLowerCase() }} have been added</div>
+            <div class="horizontal divider" style="margin: 1rem 0;"/>
+            <div>No items have been added</div>
         </template>
 
         <!-- Add or edit asset dialog -->
         <div v-if="showDialog" class="dialog" @mousedown.self.stop="showDialog = false">
             <div class="form card">
                 <h2 class="subtitle">New Item</h2>
-                <input type="text" class="text field" v-model="editedItem.name" placeholder="Name"/>
-                <select class="dropdown" required v-model="editedItem.type">
+                <input v-model="editedItem.name" type="text" class="text field" placeholder="Name">
+                <select v-model="editedItem.type" class="dropdown" required>
                     <option disabled hidden value="">Type</option>
-                    <option v-for="(type, i) in types" :key="i">{{ type }}</option>
+                    <option v-for="(typeOption, i) in types" :key="i">{{ typeOption }}</option>
                 </select>
-                <input v-if="!editedItem.plaid_account_id" type="text" class="text field" v-model="editedItem.quantity" placeholder="Quantity"/>
+                <input v-if="!editedItem.plaid_account_id" v-model="editedItem.quantity" type="text" class="text field" placeholder="Quantity">
                 <button class="primary button" @click="save">Save</button>
                 <button class="simple button" @click="showDialog = false">Cancel</button>
             </div>
@@ -73,14 +73,24 @@
 </template>
 
 <script setup>
-    const props = defineProps([
-        'title',
-        'headers',
-        'data',
-        'color',
-        'type',
-        'itemsPerPage'
-    ])
+    const props = defineProps({
+        title: {
+            type: String,
+            default: 'Actions Table'
+        },
+        headers: {
+            type: Array,
+            default: () => []
+        },
+        data: {
+            type: Array,
+            default: () => []
+        },
+        itemsPerPage: {
+            type: Number,
+            default: 10
+        }
+    })
     const localData = ref([...props.data])
     const showMenu = ref(false)
     const showDialog = ref(false)

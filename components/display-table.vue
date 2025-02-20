@@ -27,19 +27,31 @@
         </template>
 
         <template v-else>
-            <div class="horizontal divider"></div>
-            <div style="padding-top: 1em;">No items have been added</div>
+            <div class="horizontal divider" style="margin: 1rem 0;"/>
+            <div>No items have been added</div>
         </template>
     </div>
 </template>
 
 <script setup>
-    const props = defineProps([
-        'title',
-        'headers',
-        'data',
-        'itemsPerPage'
-    ])
+    const props = defineProps({
+        title: {
+            type: String,
+            default: 'Display Table'
+        },
+        headers: {
+            type: Array,
+            default: () => []
+        },
+        data: {
+            type: Array,
+            default: () => []
+        },
+        itemsPerPage: {
+            type: Number,
+            default: 10
+        }
+    })
     const page = ref(1)
     const pageCount = computed(() => props.data ? Math.ceil(props.data.length / props.itemsPerPage) : 0)
     const pageData = computed(() => props.data ? props.data.slice((page.value - 1) * props.itemsPerPage, page.value * props.itemsPerPage) : [])

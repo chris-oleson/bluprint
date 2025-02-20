@@ -38,8 +38,8 @@
             store.isLoggedIn = true
             colorMode.preference = response.theme
             store.allowEmails = response.allow_emails == 1
-            // store.subscriptionStatus = response.subscription_status
-            // store.name = response.name
+            store.name = response.name
+            store.subscriptionStatus = response.subscription_status
             // store.notification = {
             //     text: "Welcome " + store.name,
             //     color: "var(--primary)"

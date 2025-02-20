@@ -1,10 +1,10 @@
 <template>
     <div class="full height section">
-        <div v-if="loading" class="loading spinner"></div>
+        <div v-if="loading" class="loading spinner"/>
         <div v-else class="form">
             <h1 class="subtitle">Change Password</h1>
-            <input v-if="!route.query.t" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Current password" v-model="currentPassword"/>
-            <input type="password" class="big text field" :class="{'error': errorMessage}" placeholder="New password" v-model="newPassword" @keyup.enter="changePassword"/>
+            <input v-if="!route.query.t" v-model="currentPassword" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Current password">
+            <input v-model="newPassword" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="New password" @keyup.enter="changePassword">
             <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
             <button class="big primary button" @click="changePassword">Submit</button>
         </div>
