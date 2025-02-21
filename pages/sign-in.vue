@@ -1,16 +1,16 @@
 <template>
-    <div class="full height section">
-        <div v-if="loading" class="loading spinner"/>
-        <div v-else-if="errorMessage && route.query.t" class="error">{{ errorMessage }}</div>
-        <div v-else class="form">
-            <input v-model="email" type="text" class="big text field" :class="{'error': errorMessage}" placeholder="Email">
-            <input v-model="password" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Password" @keyup.enter="login">
-            <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
-            <button class="big primary button" @click="login">Sign In</button>
-            <button v-if="errorMessage == 'This account has not been verified'" class="simple button" @click="resend">Resend Verification</button>
-            <NuxtLink class="small simple button" :to="'/forgot-password?e=' + email">Forgot Password</NuxtLink>
-        </div>
+<div class="full height section">
+    <div v-if="loading" class="loading spinner"/>
+    <div v-else-if="errorMessage && route.query.t" class="error">{{ errorMessage }}</div>
+    <div v-else class="form">
+        <input v-model="email" type="text" class="big text field" :class="{'error': errorMessage}" placeholder="Email">
+        <input v-model="password" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Password" @keyup.enter="login">
+        <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
+        <button class="big primary button" @click="login">Sign In</button>
+        <button v-if="errorMessage == 'This account has not been verified'" class="simple button" @click="resend">Resend Verification</button>
+        <NuxtLink class="small simple button" :to="'/forgot-password?e=' + email">Forgot Password</NuxtLink>
     </div>
+</div>
 </template>
 
 <script setup>

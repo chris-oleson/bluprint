@@ -9,7 +9,10 @@
 
 <script setup>
     useHead ({ title: 'Error - bluprint' })
-    defineProps([
-        'error'
-    ])
+    defineProps({
+        error: {
+            type: Object,
+            default: null
+        },
+    })
 </script>
