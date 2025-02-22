@@ -5,13 +5,12 @@ export const useStore = defineStore('store', {
         isLoggedIn: false,
         allowEmails: false,
         subscriptionStatus: 'free',
-        name: ''
+        name: '',
+        theme: 'system'
     }),
     actions: {
         async logOut(redirectPath) {
             await $fetch('/api/auth/logout', { method: 'POST' })
-            const colorMode = useColorMode()
-            colorMode.preference = 'system'
             navigateTo(redirectPath)
             this.$reset()
         },

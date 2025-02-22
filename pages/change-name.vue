@@ -1,7 +1,7 @@
 <template>
 <div class="full height section">
     <div v-if="loading" class="loading spinner"/>
-    <div v-else class="form">
+    <div v-else class="skinny form">
         <h1 class="subtitle">Change Name</h1>
         <div style="text-align: start;">Current name: {{ store.name }}</div>
         <input v-model="newName" type="text" class="big text field" :class="{'error': errorMessage}" placeholder="New name" @keyup.enter="changeName">
@@ -14,7 +14,6 @@
 <script setup>
 useHead ({ title: 'Change Name - bluprint' })
 const store = useStore()
-const router = useRouter()
 const newName = ref('')
 const errorMessage = ref('')
 const loading = ref(false)
@@ -26,12 +25,12 @@ async function changeName () {
             newName: newName.value,
         })
         loading.value = false
-        Store.name = newName.value
-        Store.notification = {
-            text: "Updated name to " + newName.value,
-            color: "var(--primary)"
-        }
-        router.push('/dashboard')
+        store.name = newName.value
+        // store.notification = {
+        //     text: "Updated name to " + newName.value,
+        //     color: "var(--primary)"
+        // }
+        navigateTo('/dashboard')
     }
     catch(error) {
         errorMessage.value = error.message

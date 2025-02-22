@@ -15,7 +15,7 @@
     <div class="horizontal spacer"/>
 
     <template v-if="store.isLoggedIn">
-        <router-link to="/dashboard" class="simple button">Dashboard</router-link>
+        <NuxtLink to="/dashboard" class="simple button">Dashboard</NuxtLink>
         <button class="simple button" @click="store.logOut('/')">Sign Out</button>
     </template>
     <template v-else>

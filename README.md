@@ -17,13 +17,6 @@ bluprint is a web application boilerplate for shipping new apps quickly
 
 ## Coding guidelines
 
-### File Structure
-- Router views belong in `/src/pages`
-- Other vue components go in the `/src/components`
-- Images, fonts, and icons go in `/src/assets`
-- Other code used in multiple files goes in `/src/utilities`
-- File and folder names should be in `kebab-case`
-
 ### Comments
 - Avoid comments unless explaining why your code is the way it is
 - Write code in a descriptive way instead of describing your code with comments

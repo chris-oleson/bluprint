@@ -1,7 +1,7 @@
 <template>
     <div class="full height section">
         <div v-if="loading" class="loading spinner"/>
-        <div v-else class="form">
+        <div v-else class="skinny form">
             <h1 class="subtitle">Change Password</h1>
             <input v-if="!route.query.t" v-model="currentPassword" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Current password">
             <input v-model="newPassword" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="New password" @keyup.enter="changePassword">
@@ -15,7 +15,6 @@
     useHead ({ title: 'Change Password - bluprint' })
 
     const route = useRoute()
-    const router = useRouter()
     const currentPassword = ref('')
     const newPassword = ref('')
     const loading = ref(false)
@@ -34,10 +33,10 @@
                 color: "var(--primary)"
             }
             if (route.query.t) {
-                router.push('/sign-in')
+                navigateTo('/sign-in')
             }
             else {
-                router.push('/dashboard')
+                navigateTo('/dashboard')
             }
         }
         catch (error) {

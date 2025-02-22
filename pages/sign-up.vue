@@ -1,6 +1,6 @@
 <template>
 <div class="full height section">
-    <div class="form">
+    <div class="skinny form">
         <div v-if="loading" class="loading spinner"/>
 
         <template v-else-if="accountCreated">

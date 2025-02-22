@@ -9,7 +9,6 @@
 
 <script setup>
 useHead ({ title: 'Verify Email - bluprint' })
-const router = useRouter()
 const route = useRoute()
 const loading = ref(false)
 const errorMessage = ref('')
@@ -31,7 +30,7 @@ async function verify() {
             text: "Successfully verified email!",
             color: "var(--primary)"
         }
-        router.push('/dashboard')
+        navigateTo('/dashboard')
     }
     catch(error) {
         errorMessage.value = error.message

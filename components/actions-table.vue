@@ -48,12 +48,12 @@
 
     <!-- Add or edit asset dialog -->
     <div v-if="showDialog" class="dialog" @mousedown.self.stop="showDialog = false">
-        <div class="form card">
+        <div class="skinny form card">
             <h2 class="subtitle">New Item</h2>
             <input v-model="editedItem.name" type="text" class="text field" placeholder="Name">
             <select v-model="editedItem.type" class="dropdown" required>
                 <option disabled hidden value="">Type</option>
-                <option v-for="(typeOption, i) in types" :key="i">{{ typeOption }}</option>
+                <option v-for="(option, i) in options" :key="i">{{ option }}</option>
             </select>
             <input v-if="!editedItem.plaid_account_id" v-model="editedItem.quantity" type="text" class="text field" placeholder="Quantity">
             <button class="primary button" @click="save">Save</button>
@@ -63,7 +63,7 @@
 
     <!-- Delete asset dialog -->
     <div v-if="showDeleteDialog" class="dialog">
-        <div class="form card">
+        <div class="skinny form card">
             <div>Are you sure you want to delete this item?</div>
             <button class="primary error button" @click="deleteData">Yes</button>
             <button class="simple button" @click="showDeleteDialog = false">Cancel</button>
@@ -148,7 +148,7 @@ async function deleteData() {
     showDeleteDialog.value = false
 }
 
-const types = [
+const options = [
     'Fruit',
     'Vegetable',
     'Pastry',

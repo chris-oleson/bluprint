@@ -2,7 +2,7 @@
 <div class="full height section">
     <div v-if="loading" class="loading spinner"/>
     <div v-else-if="errorMessage && route.query.t" class="error">{{ errorMessage }}</div>
-    <div v-else class="form">
+    <div v-else class="skinny form">
         <input v-model="email" type="text" class="big text field" :class="{'error': errorMessage}" placeholder="Email">
         <input v-model="password" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="Password" @keyup.enter="login">
         <div v-if="errorMessage" class="error">{{ errorMessage }}</div>

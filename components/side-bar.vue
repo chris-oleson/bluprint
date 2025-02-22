@@ -1,27 +1,17 @@
 <template>
-<div class="sidebar">
+<div v-if="viewport.isGreaterThan('tablet')" class="sidebar">
     <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/dashboard'}" to="/dashboard">
         <Icon name="ic:baseline-dashboard"/>
         Dashboard
     </NuxtLink>
 
-    <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/tables'}" to="/tables">
-        <Icon name="ic:baseline-table-rows"/>
-        Tables
-    </NuxtLink>
-
-    <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/forms'}" to="/forms">
-        <Icon name="ic:baseline-format-align-left"/>
-        Forms
-    </NuxtLink>
-
     <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/custom-page-1'}" to="/custom-page-1">
-        <Icon name="ic:baseline-note-add"/>
+        <Icon name="material-symbols:note"/>
         Custom Page 1
     </NuxtLink>
 
     <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/custom-page-2'}" to="/custom-page-2">
-        <Icon name="ic:baseline-note-add"/>
+        <Icon name="material-symbols:note"/>
         Custom Page 2
     </NuxtLink>
 
@@ -47,6 +37,7 @@
 <script setup>
 const route = useRoute()
 const store = useStore()
+const viewport = useViewport()
 </script>
 
 <style scoped>
