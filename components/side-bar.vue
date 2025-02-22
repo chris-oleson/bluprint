@@ -1,34 +1,34 @@
 <template>
 <div v-if="viewport.isGreaterThan('tablet')" class="sidebar">
-    <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/dashboard'}" to="/dashboard">
-        <Icon name="ic:baseline-dashboard"/>
+    <nuxt-link class="big background icon text button" :class="{'selected': route.path == '/dashboard'}" to="/dashboard">
+        <Icon name="mdi:view-dashboard"/>
         Dashboard
-    </NuxtLink>
+    </nuxt-link>
 
-    <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/custom-page-1'}" to="/custom-page-1">
-        <Icon name="material-symbols:note"/>
+    <nuxt-link class="big background icon text button" :class="{'selected': route.path == '/custom-page-1'}" to="/custom-page-1">
+        <Icon name="mdi:note"/>
         Custom Page 1
-    </NuxtLink>
+    </nuxt-link>
 
-    <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/custom-page-2'}" to="/custom-page-2">
-        <Icon name="material-symbols:note"/>
+    <nuxt-link class="big background icon text button" :class="{'selected': route.path == '/custom-page-2'}" to="/custom-page-2">
+        <Icon name="mdi:note"/>
         Custom Page 2
-    </NuxtLink>
+    </nuxt-link>
 
     <div class="vertical spacer"/>
 
-    <NuxtLink class="big background icon text button" to="/contact">
-        <Icon name="ic:baseline-mail"/>
+    <nuxt-link class="big background icon text button" to="/contact">
+        <Icon name="mdi:email"/>
         Support
-    </NuxtLink>
+    </nuxt-link>
 
-    <NuxtLink class="big background icon text button" :class="{'selected': route.path == '/settings'}" to="/settings">
-        <Icon name="ic:baseline-settings"/>
+    <nuxt-link class="big background icon text button" :class="{'selected': route.path == '/settings'}" to="/settings">
+        <Icon name="mdi:cog"/>
         Settings
-    </NuxtLink>
+    </nuxt-link>
 
     <button class="big background icon text button" @click="store.logOut('/')">
-        <Icon name="ic:baseline-logout"/>
+        <Icon name="mdi:logout"/>
         Sign Out
     </button>
 </div>

@@ -8,7 +8,7 @@
         <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
         <button class="big primary button" @click="login">Sign In</button>
         <button v-if="errorMessage == 'This account has not been verified'" class="simple button" @click="resend">Resend Verification</button>
-        <NuxtLink class="small simple button" :to="'/forgot-password?e=' + email">Forgot Password</NuxtLink>
+        <nuxt-link class="small simple button" :to="'/forgot-password?e=' + email">Forgot Password</nuxt-link>
     </div>
 </div>
 </template>

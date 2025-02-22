@@ -1,19 +1,19 @@
 <template>
 <header>
-    <NuxtLink class="logo link" to="/">
+    <nuxt-link class="logo link" to="/">
         <img src="../assets/images/logo.png" height="42" width="42" alt="bluprint logo">
         <h2 class="subtitle">bluprint</h2>
-    </NuxtLink>
+    </nuxt-link>
 
     <div class="horizontal spacer"/>
 
     <template v-if="store.isLoggedIn">
-        <NuxtLink to="/dashboard" class="simple button">Dashboard</NuxtLink>
+        <nuxt-link to="/dashboard" class="simple button">Dashboard</nuxt-link>
         <button class="simple button" @click="store.logOut('/')">Sign Out</button>
     </template>
     <template v-else>
-        <NuxtLink to="/sign-in" class="simple button">Sign In</NuxtLink>
-        <NuxtLink to="/sign-up" class="primary button">Sign Up</NuxtLink>
+        <nuxt-link to="/sign-in" class="simple button">Sign In</nuxt-link>
+        <nuxt-link to="/sign-up" class="primary button">Sign Up</nuxt-link>
     </template>
 </header>
 </template>

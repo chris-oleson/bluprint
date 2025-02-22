@@ -4,7 +4,7 @@
         <div class="call-to-action">
             <h1 class="title">Jumpstart Your New App</h1>
             <h2 class="subtitle">The boring parts are already done!</h2>
-            <NuxtLink class="big primary button" to="/sign-up">Get Started Today!</NuxtLink>
+            <nuxt-link class="big primary button" to="/sign-up">Get Started Today!</nuxt-link>
         </div>
 
         <div class="card">

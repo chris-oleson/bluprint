@@ -17,11 +17,11 @@
         </table>
         <div class="table-footer">
             <button class="simple icon button" :class="{'disabled': page == 1}" @click="page--">
-                <Icon name="ic:baseline-arrow-left"/>
+                <Icon name="mdi:menu-left"/>
             </button>
             <div>Page {{ page }} of {{ pageCount }}</div>
             <button class="simple icon button" :class="{'disabled': page == pageCount}" @click="page++">
-                <Icon name="ic:baseline-arrow-right"/>
+                <Icon name="mdi:menu-right"/>
             </button>
         </div>
     </template>

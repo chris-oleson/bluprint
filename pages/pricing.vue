@@ -1,5 +1,5 @@
 <template>
-<div class="full height section">
+<div class="full height full width secondary section">
     <div class="section">
         <h1 class="title">Pricing</h1>
         <div style="margin-bottom: 1em;">
@@ -9,22 +9,24 @@
     </div>
 
     <div class="full width secondary section">
-        <div class="form card">
-            <h2 class="title">Free</h2>
-            <div>No card required!</div>
-            <NuxtLink class="big primary button" to="/dashboard">Get Started</NuxtLink>
-        </div>
+    <div class="row">
+            <div class="skinny form card">
+                <h2 class="title">Free</h2>
+                <div>No card required!</div>
+                <nuxt-link class="big primary button" to="/dashboard">Get Started</nuxt-link>
+            </div>
 
-        <div class="form card">
-            <h2 class="title">$0<div>/month</div></h2>
-            <div>Just clone the repo!</div>
-            <NuxtLink class="big primary button" to="/dashboard">Get Started</NuxtLink>
-        </div>
+            <div class="skinny form card">
+                <h2 class="title">$0<div>/month</div></h2>
+                <div>Just clone the repo!</div>
+                <nuxt-link class="big primary button" to="/dashboard">Get Started</nuxt-link>
+            </div>
 
-        <div class="form card">
-            <h2 class="title">$0<div>/year</div></h2>
-            <div>It's open source!</div>
-            <NuxtLink class="big primary button" to="/dashboard">Get Started</NuxtLink>
+            <div class="skinny form card">
+                <h2 class="title">$0<div>/year</div></h2>
+                <div>It's open source!</div>
+                <nuxt-link class="big primary button" to="/dashboard">Get Started</nuxt-link>
+            </div>
         </div>
     </div>
 </div>
@@ -41,10 +43,8 @@ useHead ({ title: 'Pricing - bluprint' })
     padding: 0;
 }
 
-.full.width.section {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 3em;
+.row {
+    gap: 2em;
 }
 
 .card {

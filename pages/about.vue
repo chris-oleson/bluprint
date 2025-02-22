@@ -33,25 +33,27 @@
 
     <div class="secondary full width section">
         <h1 class="title">Tech Stack</h1>
-        <div class="card">
-            <h2 class="subtitle">Nuxt</h2>
-            <div>Web application framework</div>
-        </div>
-        <div class="card">
-            <h2 class="subtitle">Node</h2>
-            <div>Web server runtime</div>
-        </div>
-        <div class="card">
-            <h2 class="subtitle">MySQL</h2>
-            <div>Database</div>
-        </div>
-        <div class="card">
-            <h2 class="subtitle">Postmark</h2>
-            <div>Email delivery</div>
-        </div>
-        <div class="card">
-            <h2 class="subtitle">Stripe</h2>
-            <div>Payment processing</div>
+        <div class="row">
+            <div class="card">
+                <h2 class="subtitle">Nuxt</h2>
+                <div>Web application framework</div>
+            </div>
+            <div class="card">
+                <h2 class="subtitle">Node</h2>
+                <div>Web server runtime</div>
+            </div>
+            <div class="card">
+                <h2 class="subtitle">MySQL</h2>
+                <div>Database</div>
+            </div>
+            <div class="card">
+                <h2 class="subtitle">Postmark</h2>
+                <div>Email delivery</div>
+            </div>
+            <div class="card">
+                <h2 class="subtitle">Stripe</h2>
+                <div>Payment processing</div>
+            </div>
         </div>
     </div>
 </div>
@@ -66,7 +68,7 @@ useHead ({ title: 'About - bluprint' })
     & .subtitle {
         width: 100%;
         text-align: left;
-    }
+    } 
 }
 
 .full.width {

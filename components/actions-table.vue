@@ -4,7 +4,7 @@
         <h1 class="title">{{ title }}</h1>
         <div class="horizontal spacer"/>
         <button class="border icon button" @click="newItem()">
-            <Icon name="ic:baseline-plus"/>
+            <Icon name="mdi:plus"/>
         </button>
     </div>
 
@@ -21,10 +21,10 @@
                     <td v-for="(header, j) in headers" :key="j" :style="'text-align:' + header.align">{{ item[header.key] }}</td>
                     <td style="text-align: end">
                         <button class="simple icon button" title="Edit" @click="editItem(item)">
-                            <Icon name="ic:baseline-edit"/>
+                            <Icon name="mdi:edit"/>
                         </button>
                         <button class="simple icon button" title="Delete" @click="deleteItemDialog(item)">
-                            <Icon name="ic:baseline-delete"/>
+                            <Icon name="mdi:delete"/>
                         </button>
                     </td>
                 </tr>
@@ -32,11 +32,11 @@
         </table>
         <div class="table-footer">
             <button class="simple icon button" :class="{'disabled': page == 1}" @click="page--">
-                <Icon name="ic:baseline-arrow-left"/>
+                <Icon name="mdi:menu-left"/>
             </button>
             <div>Page {{ page }} of {{ pageCount }}</div>
             <button class="simple icon button" :class="{'disabled': page == pageCount}" @click="page++">
-                <Icon name="ic:baseline-arrow-right"/>
+                <Icon name="mdi:menu-right"/>
             </button>
         </div>
     </template>

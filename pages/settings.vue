@@ -9,15 +9,15 @@
         </div>
 
         <div>Account</div>
-        <NuxtLink class="border button" to="/change-name">Change Name</NuxtLink>
-        <NuxtLink class="border button" to="/change-email">Change Email</NuxtLink>
-        <NuxtLink class="border button" to="/change-password">Change Password</NuxtLink>
+        <nuxt-link class="border button" to="/change-name">Change Name</nuxt-link>
+        <nuxt-link class="border button" to="/change-email">Change Email</nuxt-link>
+        <nuxt-link class="border button" to="/change-password">Change Password</nuxt-link>
         <button class="border error button" @click="showHistoryDialog = true">Delete Historic Data</button>
-        <NuxtLink class="border error button" to="/delete-account">Delete Account</NuxtLink>
+        <nuxt-link class="border error button" to="/delete-account">Delete Account</nuxt-link>
 
         <div>Subscription: {{ store.subscriptionStatus == "active" ? "Active" : "Free" }}</div>
         <a v-if="store.subscriptionStatus == 'active'" class="border button" href="https://billing.stripe.com/p/login/fZe16Ng0E4svc2Q6oo">Manage Subscription</a>
-        <NuxtLink v-else class="primary button" to="/pricing">Upgrade</NuxtLink>
+        <nuxt-link v-else class="primary button" to="/pricing">Upgrade</nuxt-link>
 
         <label class="label">
             Send me updates and promotions
