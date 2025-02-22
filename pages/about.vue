@@ -39,10 +39,6 @@
                 <div>Web application framework</div>
             </div>
             <div class="card">
-                <h2 class="subtitle">Node</h2>
-                <div>Web server runtime</div>
-            </div>
-            <div class="card">
                 <h2 class="subtitle">MySQL</h2>
                 <div>Database</div>
             </div>
@@ -66,26 +62,15 @@ useHead ({ title: 'About - bluprint' })
 <style scoped>
 .faq {
     & .subtitle {
-        width: 100%;
         text-align: left;
-    } 
+    }
 }
-
-.full.width {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1em;
-    & .title {
-        flex: 100%;
-        margin-bottom: 1em;;
-    }
-    & .card {
-        flex: 1;
-        min-width: 17em;
-        height: 10em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+.card {
+    flex: 1;
+    min-width: 17em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 </style>

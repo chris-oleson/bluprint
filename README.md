@@ -7,6 +7,7 @@ bluprint is a web application boilerplate for shipping new apps quickly
 - Install the version of node specified in `package.json`
 - Install the version of npm specified in `package.json`
 - Install MySQL Server
+- Import `schema.sql` your local MySQL server to load the local database
 - Create a `.env` file copied from `.env.example` and enter your environment information
 - Run command `npm install`
 - Run command `npm run dev`
@@ -52,7 +53,7 @@ bluprint is a web application boilerplate for shipping new apps quickly
 ### Javascript
 - Avoid Object Oriented Programming
 - Functions should be pure unless inside a Vue component
-- Keep functions near to related code if possible
+- Fuctions should be located near related code if possible
 - Use 4 space indentation
 - Use relative paths for imports
 - Variables and function names should be in `camelCase`
@@ -65,4 +66,4 @@ bluprint is a web application boilerplate for shipping new apps quickly
 ### Vue
 - Use the composition API
 - Avoid passing props through multiple components
-- If multiple components need to share state, and those components do not have a parent-child relationship, use the global state in `src/utilities/store` instead of props
+- If multiple components need to share state, and those components do not have a parent-child relationship, use the global state in `/utils/pinia.js` instead of props
