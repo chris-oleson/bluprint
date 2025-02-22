@@ -42,12 +42,10 @@ definePageMeta({
     layout: 'app-layout',
 })
 const store = useStore()
-const colorMode = useColorMode()
 const showHistoryDialog = ref(false)
 
 function updateTheme(theme) {
     store.theme = theme
-    colorMode.preference = theme
     savePreferences()
 }
 
@@ -65,7 +63,7 @@ function savePreferences() {
     $fetch('/api/auth/preferences', {
         method: 'PATCH',
         body: {
-            theme: colorMode.preference,
+            theme: store.theme,
             allowEmails: store.allowEmails
         }
     })

@@ -10,7 +10,7 @@ export default defineEventHandler(async event => {
     if (!await Password.check(user.id, body.password, event.context.database)) {
         throw createError({ statusCode: 400, statusMessage: 'Incorrect username or password' })
     }
-    if (process.env.VERIFY_EMAIL == 'true' && !user.verified) {
+    if (process.env.POSTMARK_API_KEY && !user.verified) {
         throw createError({ statusCode: 401, statusMessage: 'This account has not been verified' })
     }
 

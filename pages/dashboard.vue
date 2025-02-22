@@ -1,6 +1,6 @@
 <template>
 <div class="dashboard">
-    <div class="big column">
+    <div class="column">
         <actions-table title="Actions Table" :headers="tableHeaders" :data="tableData" :items-per-page="5"/>
         <display-table title="Display Table" :headers="tableHeaders" :data="tableData" :items-per-page="5"/>
     </div>

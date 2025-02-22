@@ -278,6 +278,9 @@ div {
     &:has(> .checkbox) {
         cursor: pointer;
     }
+    & .dropdown {
+        width: fit-content;
+    }
 }
 
 /* Links */

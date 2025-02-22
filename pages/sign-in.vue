@@ -23,7 +23,6 @@
     const errorMessage = ref('')
     const loading = ref(false)
     const store = useStore()
-    const colorMode = useColorMode()
 
     async function login() {
         try {
@@ -36,7 +35,7 @@
                 }
             })
             store.isLoggedIn = true
-            colorMode.preference = response.theme
+            store.theme = response.theme
             store.allowEmails = response.allow_emails == 1
             store.name = response.name
             store.subscriptionStatus = response.subscription_status

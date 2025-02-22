@@ -6,21 +6,8 @@
     </nuxt-link>
 
     <div class="horizontal spacer"/>
-
-    <template v-if="store.isLoggedIn">
-        <nuxt-link to="/dashboard" class="simple button">Dashboard</nuxt-link>
-        <button class="simple button" @click="store.logOut('/')">Sign Out</button>
-    </template>
-    <template v-else>
-        <nuxt-link to="/sign-in" class="simple button">Sign In</nuxt-link>
-        <nuxt-link to="/sign-up" class="primary button">Sign Up</nuxt-link>
-    </template>
 </header>
 </template>
-
-<script setup>
-const store = useStore()
-</script>
 
 <style scoped>
 header {

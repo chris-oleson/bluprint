@@ -10,6 +10,47 @@
 
 <script setup>
 const viewport = useViewport()
+const store = useStore()
+const colorMode = useColorMode()
+colorMode.preference = store.theme
+watch(() => store.theme, () => {
+    colorMode.preference = store.theme
+})
+
+async function checkSession() {
+    if (store.isLoggedIn) {
+        try {
+            await $fetch('/api/auth/check-session', {
+                method: 'POST'
+            })
+        }
+        catch {
+            store.logOut('/sign-in')
+        }
+    }
+}
+
+onMounted(() => {
+    setInterval(checkSession, 1000 * 60 * 5)
+
+    let clicked = true
+    let canClick = true
+    document.addEventListener('click', async () => {
+        if (!clicked && store.isLoggedIn) {
+            await $fetch('/api/auth/keep-alive', {
+                method: 'POST'
+            })
+            clicked = true
+        }
+        else if (canClick) {
+            canClick = false
+            setTimeout(() => {
+                clicked = false
+                canClick = true
+            }, 1000 * 60 * 5)
+        }
+    })
+})
 </script>
 
 <style scoped>

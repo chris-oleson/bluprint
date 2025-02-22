@@ -4,29 +4,34 @@
         <input type="text" class="text field" placeholder="Placeholder">
     </label>
 
-    <label class="label">Dropdown
-        <select v-model="dropdown" required class="dropdown">
-            <option disabled hidden value="">Placeholder</option>
-            <option v-for="(option, i) in options" :key="i">{{ option }}</option>
-        </select>
-    </label>
+    <div class="row">
+        <div class="column">
+            <label class="label">Dropdown
+                <select v-model="dropdown" required class="dropdown">
+                    <option disabled hidden value="">Placeholder</option>
+                    <option v-for="(option, i) in options" :key="i">{{ option }}</option>
+                </select>
+            </label>
 
-    <label class="label">Checkbox
-        <input type="checkbox" checked class="checkbox">
-    </label>
+            <button class="border button">Button</button>
+            <div class="horizontal button group">
+                <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button</button>
+                <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button</button>
+                <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button</button>
+            </div>
+        </div>
 
-    <button class="border button">Button</button>
+        <div class="column">
+            <label class="label">Checkbox
+                <input type="checkbox" checked class="checkbox">
+            </label>
 
-    <div class="horizontal button group">
-        <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button</button>
-        <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button</button>
-        <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button</button>
-    </div>
-
-    <div class="vertical button group">
-        <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button</button>
-        <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button</button>
-        <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button</button>
+            <div class="vertical button group">
+                <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button</button>
+                <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button</button>
+                <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button</button>
+            </div>
+        </div>
     </div>
 </div>
 </template>
@@ -40,3 +45,9 @@ const options = [
     'Option 3'
 ]
 </script>
+
+<style scoped>
+.row, .column {
+    gap: 1rem;
+}
+</style>

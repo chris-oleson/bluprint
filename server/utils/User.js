@@ -13,7 +13,9 @@ export default {
         const [newUser] = await databaseConnection.query("INSERT INTO users VALUES (NULL, ?, ?, ?, CURRENT_DATE(), NULL, 'free', 0)", [email, hashedPassword, name])
         await databaseConnection.query("INSERT INTO user_preferences VALUES (NULL, 'system', 'USD', 5, 1, ?)", [newUser.insertId])
         const tokenId = await EmailToken.create(newUser.insertId, databaseConnection)
-        Email.sendEmailVerification(name, email, tokenId)
+        if (process.env.POSTMARK_API_KEY) {
+            Email.sendEmailVerification(name, email, tokenId)
+        }
     },
 
     async readWithEmail(email, databaseConnection) {
