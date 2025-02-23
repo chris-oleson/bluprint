@@ -21,7 +21,10 @@ const store = useStore()
 async function deleteAccount () {
     try {
         loading.value = true
-        await HTTP.delete('/auth', { password: password.value })
+        await $fetch('/api/auth', {
+            method: 'DELETE',
+            body: { password: password.value }
+        })
         store.$reset()
         // store.notification = {
         //     text: "Successfully deleted account",
@@ -30,8 +33,10 @@ async function deleteAccount () {
         navigateTo('/')
     }
     catch(error) {
+        if (error.response) {
+            errorMessage.value = error.response.statusText
+        }
         loading.value = false
-        errorMessage.value = error.message
     }
 }
 </script>

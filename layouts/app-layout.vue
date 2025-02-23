@@ -11,11 +11,6 @@
 <script setup>
 const viewport = useViewport()
 const store = useStore()
-const colorMode = useColorMode()
-colorMode.preference = store.theme
-watch(() => store.theme, () => {
-    colorMode.preference = store.theme
-})
 
 async function checkSession() {
     if (store.isLoggedIn) {

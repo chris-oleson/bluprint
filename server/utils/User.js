@@ -63,12 +63,14 @@ export default {
     },
 
     async delete(userId, databaseConnection) {
-        const user = await this.readWithId(userId, databaseConnection)
-        const customerResult = await stripe.customers.list({ email: user.email })
-        if (customerResult.data.length) {
-            const subscriptionResult = await stripe.subscriptions.list({ customer: customerResult.data[0].id })
-            if (subscriptionResult.data.length) {
-                await stripe.subscriptions.cancel(subscriptionResult.data[0].id)
+        if (process.env.STRIPE_API_KEY) {
+            const user = await this.readWithId(userId, databaseConnection)
+            const customerResult = await stripe.customers.list({ email: user.email })
+            if (customerResult.data.length) {
+                const subscriptionResult = await stripe.subscriptions.list({ customer: customerResult.data[0].id })
+                if (subscriptionResult.data.length) {
+                    await stripe.subscriptions.cancel(subscriptionResult.data[0].id)
+                }
             }
         }
         await databaseConnection.query("DELETE FROM user_preferences WHERE user_id = ?", [userId])
