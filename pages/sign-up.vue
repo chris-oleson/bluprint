@@ -34,14 +34,11 @@ const loading = ref(false)
 async function createAccount() {
     try {
         loading.value = true
-        await $fetch('/api/auth/create', {
-            method: 'POST',
-            body: {
-                name: name.value,
-                email: email.value,
-                password: password.value,
-            }
-        })
+        await $fetch('/api/auth/create', { method: 'POST', body: {
+            name: name.value,
+            email: email.value,
+            password: password.value,
+        }})
         accountCreated.value = true
     }
     catch(error) {

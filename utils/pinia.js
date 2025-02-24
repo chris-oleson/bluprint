@@ -6,7 +6,11 @@ export const useStore = defineStore('store', {
         allowEmails: false,
         subscriptionStatus: 'free',
         name: '',
-        theme: 'system'
+        theme: 'system',
+        notification: {
+            text: '',
+            color: ''
+        },
     }),
     actions: {
         async logOut(redirectPath) {

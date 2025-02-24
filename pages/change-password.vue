@@ -23,12 +23,12 @@
     async function changePassword() {
         try {
             loading.value = true
-            await HTTP.patch('/auth/password', {
+            await $fetch('/api/auth/password', { method: 'PATCH', body: {
                 token: route.query.t,
                 currentPassword: currentPassword.value,
                 newPassword: newPassword.value,
-            })
-            Store.notification = {
+            }})
+            store.notification = {
                 text: "Successfully updated password",
                 color: "var(--primary)"
             }
@@ -40,7 +40,9 @@
             }
         }
         catch (error) {
-            errorMessage.value = error.message
+            if (error.response) {
+                errorMessage.value = error.response.statusText
+            }
             loading.value = false
         }
     }

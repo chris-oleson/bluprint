@@ -39,10 +39,10 @@
             store.allowEmails = response.allow_emails == 1
             store.name = response.name
             store.subscriptionStatus = response.subscription_status
-            // store.notification = {
-            //     text: "Welcome " + store.name,
-            //     color: "var(--primary)"
-            // }
+            store.notification = {
+                text: "Welcome " + store.name,
+                color: "var(--primary)"
+            }
             navigateTo('/dashboard')
         }
         catch(error) {
@@ -55,14 +55,10 @@
 
     async function resend() {
         try {
-            await $fetch('/api/auth/resend', {
-                method: 'POST',
-                body: {
-                    email: email.value,
-                }
-            })
+            await $fetch('/api/auth/resend', { method: 'POST', body: {
+                email: email.value,
+            }})
 
-            await axios.post('/auth/resend', { email: email.value })
             store.notification = {
                 text: "Resent email verification",
                 color: "var(--primary)"

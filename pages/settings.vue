@@ -40,12 +40,9 @@ function updateTheme(theme) {
 }
 
 function savePreferences() {
-    $fetch('/api/auth/preferences', {
-        method: 'PATCH',
-        body: {
-            theme: store.theme,
-            allowEmails: store.allowEmails
-        }
-    })
+    $fetch('/api/auth/preferences', { method: 'PATCH', body: {
+        theme: store.theme,
+        allowEmails: store.allowEmails
+    }})
 }
 </script>

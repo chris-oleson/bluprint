@@ -19,14 +19,13 @@ async function verify() {
     loading.value = true
 
     try {
-        const response = await HTTP.post('/auth/verify', {
+        const response = await $fetch('/api/auth/verify', { method: 'POST', body: {
             token: route.query.t,
             email: route.query.e
-        })
-        await Store.getAllAssetData()
-        Store.name = response.name
-        Store.isLoggedIn = true
-        Store.notification = {
+        }})
+        store.name = response.name
+        store.isLoggedIn = true
+        store.notification = {
             text: "Successfully verified email!",
             color: "var(--primary)"
         }

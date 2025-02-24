@@ -15,9 +15,7 @@ const store = useStore()
 async function checkSession() {
     if (store.isLoggedIn) {
         try {
-            await $fetch('/api/auth/check-session', {
-                method: 'POST'
-            })
+            await $fetch('/api/auth/check-session', { method: 'POST' })
         }
         catch {
             store.logOut('/sign-in')
@@ -32,9 +30,7 @@ onMounted(() => {
     let canClick = true
     document.addEventListener('click', async () => {
         if (!clicked && store.isLoggedIn) {
-            await $fetch('/api/auth/keep-alive', {
-                method: 'POST'
-            })
+            await $fetch('/api/auth/keep-alive', { method: 'POST' })
             clicked = true
         }
         else if (canClick) {

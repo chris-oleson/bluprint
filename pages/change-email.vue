@@ -26,14 +26,16 @@ const loading = ref(false)
 async function changeEmail () {
     try {
         loading.value = true
-        await HTTP.patch('/auth/email', {
+        await $fetch('/api/auth/email', { method: 'PATCH', body: {
             password: password.value,
             newEmail: newEmail.value,
-        })
+        }})
         sentVerification.value = true
     }
     catch(error) {
-        errorMessage.value = error.message
+        if (error.response) {
+            errorMessage.value = error.response.statusText
+        }
     }
 
     loading.value = false

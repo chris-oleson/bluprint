@@ -21,19 +21,21 @@ const loading = ref(false)
 async function changeName () {
     try {
         loading.value = true
-        await HTTP.patch('/auth/name', {
+        await $fetch('/api/auth/name', { method: 'PATCH', body: {
             newName: newName.value,
-        })
+        }})
         loading.value = false
         store.name = newName.value
-        // store.notification = {
-        //     text: "Updated name to " + newName.value,
-        //     color: "var(--primary)"
-        // }
+        store.notification = {
+            text: "Updated name to " + newName.value,
+            color: "var(--primary)"
+        }
         navigateTo('/dashboard')
     }
     catch(error) {
-        errorMessage.value = error.message
+        if (error.response) {
+            errorMessage.value = error.response.statusText
+        }
     }
 
     loading.value = false

@@ -21,15 +21,14 @@ const store = useStore()
 async function deleteAccount () {
     try {
         loading.value = true
-        await $fetch('/api/auth', {
-            method: 'DELETE',
-            body: { password: password.value }
-        })
+        await $fetch('/api/auth', { method: 'DELETE', body: {
+            password: password.value
+        }})
         store.$reset()
-        // store.notification = {
-        //     text: "Successfully deleted account",
-        //     color: "var(--primary)"
-        // }
+        store.notification = {
+            text: "Successfully deleted account",
+            color: "var(--primary)"
+        }
         navigateTo('/')
     }
     catch(error) {
