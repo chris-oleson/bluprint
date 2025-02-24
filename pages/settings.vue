@@ -12,7 +12,6 @@
         <nuxt-link class="border button" to="/change-name">Change Name</nuxt-link>
         <nuxt-link class="border button" to="/change-email">Change Email</nuxt-link>
         <nuxt-link class="border button" to="/change-password">Change Password</nuxt-link>
-        <button class="border error button" @click="showHistoryDialog = true">Delete Historic Data</button>
         <nuxt-link class="border error button" to="/delete-account">Delete Account</nuxt-link>
 
         <div>Subscription: {{ store.subscriptionStatus == "active" ? "Active" : "Free" }}</div>
@@ -24,14 +23,6 @@
             <input v-model="store.allowEmails" type="checkbox" class="checkbox" @change="savePreferences()">
         </label>
     </div>
-
-    <div v-if="showHistoryDialog" class="dialog" @click.self.stop="showHistoryDialog = false">
-        <div class="skinny form card">
-            <div>Are you sure you want to delete all historic value data on your account? This action cannot be undone.</div>
-            <button class="primary error button" @click="deleteHistory()">Yes</button>
-            <button class="simple button" @click="showHistoryDialog = false">Cancel</button>
-        </div>
-    </div>
 </div>
 </template>
 
@@ -42,21 +33,10 @@ definePageMeta({
     layout: 'app-layout',
 })
 const store = useStore()
-const showHistoryDialog = ref(false)
 
 function updateTheme(theme) {
     store.theme = theme
     savePreferences()
-}
-
-async function deleteHistory() {
-    await HTTP.delete('/api/items/history')
-    showHistoryDialog.value = false
-    store.getAllAssetData()
-    store.notification = {
-        text: "Successfully deleted history",
-        color: "var(--primary)"
-    }
 }
 
 function savePreferences() {

@@ -1,6 +1,6 @@
 <template>
 <div class="card">
-    <h1 class="title">{{ title }}</h1>
+    <h2 class="title">{{ title }}</h2>
 
     <template v-if="data && data.length">
         <table>
@@ -68,11 +68,6 @@ const pageData = computed(() => props.data ? props.data.slice((page.value - 1) *
 
 .button {
     display: inline;
-}
-
-.title {
-    font-size: 2em;
-    margin-bottom: .5rem;
 }
 
 .table-footer {

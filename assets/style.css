@@ -12,7 +12,7 @@
     --secondary: #81b3d5;
     --text: #000000;
     --text-disabled: rgba(0, 0, 0, 0.5);
-    --text-accent: rgba(0, 0, 0, 0.7);
+    --text-accent: rgba(0, 0, 0, 0.6);
     --accent: rgba(0, 0, 0, 0.2);
     --low-accent: rgba(0, 0, 0, 0.1);
     --background: #ffffff;
@@ -81,9 +81,9 @@ div {
     font-size: 1em;
     font-weight: 600;
     text-transform: uppercase;
+    text-wrap: nowrap;
     text-align: center;
     text-decoration: inherit;
-    min-width: fit-content;
     border: none;
     border-radius: .5em;
     transition-duration: .2s;
@@ -319,8 +319,8 @@ div {
     }
 }
 
-/* Radios */
-.button.group {
+/* Groups */
+.group {
     display: flex;
     &.horizontal {
         flex-direction: row;
@@ -350,11 +350,7 @@ div {
 .dashboard {
     background-color: var(--low-accent);
     min-height: 100%;
-    padding: .5em;
-    gap: .5em;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: baseline;
+    padding: .5rem;
     border-radius: .5rem 0 0 0;
     &.centered {
         align-content: center;
@@ -366,21 +362,22 @@ div {
 .row {
     display: flex;
     justify-content: center;
-    gap: .5em;
-    flex: 100%;
+    gap: .5rem;
+    width: 100%;
     flex-wrap: wrap;
-}
-.column {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: .5em;
-    flex: 2;
-    &.big {
-        flex: 4;
-    }
-    &.small {
-        flex: 1;
+    & .column {
+        height: fit-content;
+        min-width: min-content;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        flex: 2;
+        &.big {
+            flex: 4;
+        }
+        &.small {
+            flex: 1;
+        }
     }
 }
 
@@ -428,6 +425,9 @@ div {
     border-radius: .5em;
     border: 1px solid var(--low-accent);
     overflow: hidden;
+    & .title {
+        font-size: 2rem;
+    }
 }
 
 /* Sections */
@@ -482,23 +482,20 @@ div {
     }
 }
 
+/* Dialog */
 .dialog {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, .5);
-    max-width: 100% !important;
-    z-index: 100;
-    & > .card {
-        box-shadow: none;
+    border: none;
+    background-color: transparent;
+    &::backdrop {
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(.25rem)
+    }
+    & > * {
+        width: 300px;
     }
 }
 
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;

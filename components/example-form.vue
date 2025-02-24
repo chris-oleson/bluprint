@@ -1,5 +1,7 @@
 <template>
 <div class="form card">
+    <h2 class="title">Form Interface</h2>
+
     <label class="label">Text Field
         <input type="text" class="text field" placeholder="Placeholder">
     </label>
@@ -13,31 +15,39 @@
                 </select>
             </label>
 
-            <button class="border button">Button</button>
-            <div class="horizontal button group">
-                <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button</button>
-                <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button</button>
-                <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button</button>
+            <button class="border button" @click="dialog.showModal()">Open Dialog</button>
+            <div class="horizontal group">
+                <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button 1</button>
+                <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button 2</button>
+                <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button 3</button>
             </div>
         </div>
 
-        <div class="column">
+        <div class="small column">
             <label class="label">Checkbox
                 <input type="checkbox" checked class="checkbox">
             </label>
 
-            <div class="vertical button group">
-                <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button</button>
-                <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button</button>
-                <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button</button>
+            <div class="vertical group">
+                <button class="border button" :class="{'selected': selected == 1}" @click="selected = 1">Button 1</button>
+                <button class="border button" :class="{'selected': selected == 2}" @click="selected = 2">Button 2</button>
+                <button class="border button" :class="{'selected': selected == 3}" @click="selected = 3">Button 3</button>
             </div>
         </div>
     </div>
+
+    <dialog ref='dialog' class="dialog" @click.self="dialog.close()">
+        <div class="form card">
+            <div>This is a dialog</div>
+            <button class="border button" @click="dialog.close()">Close Dialog</button>
+        </div>
+    </dialog>
 </div>
 </template>
 
 <script setup>
 const selected = ref(2)
+const dialog = ref(null)
 const dropdown = ''
 const options = [
     'Option 1',

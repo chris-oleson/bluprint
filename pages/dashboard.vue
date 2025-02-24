@@ -1,11 +1,13 @@
 <template>
 <div class="dashboard">
-    <div class="column">
-        <actions-table title="Actions Table" :headers="tableHeaders" :data="tableData" :items-per-page="5"/>
-        <display-table title="Display Table" :headers="tableHeaders" :data="tableData" :items-per-page="5"/>
-    </div>
-    <div class="column">
-        <example-form/>
+    <div class="row">
+        <div class="column">
+            <actions-table title="Actions Table" :headers="tableHeaders" :data="tableData" :items-per-page="5"/>
+            <display-table title="Display Table" :headers="tableHeaders" :data="tableData" :items-per-page="5"/>
+        </div>
+        <div class="column">
+            <example-form/>
+        </div>
     </div>
 </div>
 </template>

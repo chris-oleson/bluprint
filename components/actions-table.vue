@@ -1,9 +1,9 @@
 <template>
 <div class="card">
     <div class="toolbar">
-        <h1 class="title">{{ title }}</h1>
+        <h2 class="title">{{ title }}</h2>
         <div class="horizontal spacer"/>
-        <button class="border icon button" @click="newItem()">
+        <button class="border icon button" title="Add" @click="newItem()">
             <Icon name="mdi:plus"/>
         </button>
     </div>
@@ -23,7 +23,7 @@
                         <button class="simple icon button" title="Edit" @click="editItem(item)">
                             <Icon name="mdi:edit"/>
                         </button>
-                        <button class="simple icon button" title="Delete" @click="deleteItemDialog(item)">
+                        <button class="simple icon button" title="Delete" @click="deleteItemDialog(item); deleteDialog.showModal()">
                             <Icon name="mdi:delete"/>
                         </button>
                     </td>
@@ -47,8 +47,8 @@
     </template>
 
     <!-- Add or edit asset dialog -->
-    <div v-if="showDialog" class="dialog" @mousedown.self.stop="showDialog = false">
-        <div class="skinny form card">
+    <dialog ref='dialog' class="dialog" @click.self="dialog.close()">
+        <div class="form card">
             <h2 class="subtitle">New Item</h2>
             <input v-model="editedItem.name" type="text" class="text field" placeholder="Name">
             <select v-model="editedItem.type" class="dropdown" required>
@@ -57,18 +57,18 @@
             </select>
             <input v-if="!editedItem.plaid_account_id" v-model="editedItem.quantity" type="text" class="text field" placeholder="Quantity">
             <button class="primary button" @click="save">Save</button>
-            <button class="simple button" @click="showDialog = false">Cancel</button>
+            <button class="simple button" @click="dialog.close()">Cancel</button>
         </div>
-    </div>
+    </dialog>
 
     <!-- Delete asset dialog -->
-    <div v-if="showDeleteDialog" class="dialog">
-        <div class="skinny form card">
+    <dialog ref='deleteDialog' class="dialog" @click.self="deleteDialog.close()">
+        <div class="form card">
             <div>Are you sure you want to delete this item?</div>
-            <button class="primary error button" @click="deleteData">Yes</button>
-            <button class="simple button" @click="showDeleteDialog = false">Cancel</button>
+            <button class="primary error button" @click="deleteData()">Yes</button>
+            <button class="simple button" @click="deleteDialog.close()">Cancel</button>
         </div>
-    </div>
+    </dialog>
 </div>
 </template>
 
@@ -92,9 +92,8 @@ const props = defineProps({
     }
 })
 const localData = ref([...props.data])
-const showMenu = ref(false)
-const showDialog = ref(false)
-const showDeleteDialog = ref(false)
+const dialog = ref(null)
+const deleteDialog = ref(null)
 const page = ref(1)
 const pageCount = computed(() => Math.ceil(localData.value.length / props.itemsPerPage))
 const pageData = computed(() => localData.value.slice((page.value - 1) * props.itemsPerPage, page.value * props.itemsPerPage))
@@ -110,14 +109,13 @@ const defaultItem = {
 function newItem() {
     editedItem.value = Object.assign({}, defaultItem)
     editedIndex.value = -1
-    showMenu.value = false
-    showDialog.value = true
+    dialog.value.showModal()
 }
 
 function editItem (item) {
     editedIndex.value = localData.value.indexOf(item)
     editedItem.value = Object.assign({}, item)
-    showDialog.value = true
+    dialog.value.showModal()
 }
 
 function save () {
@@ -132,7 +130,6 @@ function save () {
 function deleteItemDialog (item) {
     editedIndex.value = localData.value.indexOf(item)
     editedItem.value = Object.assign({}, item)
-    showDeleteDialog.value = true
 }
 
 async function createData(item) {
@@ -145,7 +142,7 @@ async function updateData() {
 
 async function deleteData() {
     localData.value.splice(editedIndex.value, 1)
-    showDeleteDialog.value = false
+    deleteDialog.value.close()
 }
 
 const options = [
@@ -176,9 +173,6 @@ const options = [
     height: fit-content;
     gap: 1em;
     text-wrap: nowrap;
-    & .title {
-        font-size: 2em;
-    }
 }
 
 .table-footer {
