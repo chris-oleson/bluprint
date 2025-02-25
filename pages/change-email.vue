@@ -17,6 +17,10 @@
 
 <script setup>
 useHead ({ title: 'Change Email - bluprint' })
+definePageMeta({
+    middleware: 'require-authentication',
+    layout: 'app-layout',
+})
 const password = ref('')
 const newEmail = ref('')
 const errorMessage = ref('')

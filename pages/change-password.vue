@@ -13,7 +13,10 @@
 
 <script setup>
     useHead ({ title: 'Change Password - bluprint' })
-
+    definePageMeta({
+        middleware: 'require-authentication',
+        layout: 'app-layout',
+    })
     const route = useRoute()
     const currentPassword = ref('')
     const newPassword = ref('')

@@ -27,11 +27,11 @@ watch(() => store.notification, () => {
 })
 </script>
 
-<stype scoped>
+<style scoped>
 /* Notifications */
 .notification {
     position: fixed;
-    bottom: 1em;
+    bottom: 1rem;
     left: 0;
     right: 0;
     & .card {
@@ -42,7 +42,8 @@ watch(() => store.notification, () => {
         text-wrap: none;
         color: white;
         border: none;
+        padding: 1rem;
     }
 }
 @keyframes fadeOut { to { opacity: 0; } }
-</stype>
+</style>

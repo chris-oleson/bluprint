@@ -13,6 +13,10 @@
 
 <script setup>
 useHead ({ title: 'Delete Account - bluprint' })
+definePageMeta({
+    middleware: 'require-authentication',
+    layout: 'app-layout',
+})
 const password = ref('')
 const errorMessage = ref('')
 const loading = ref(false)

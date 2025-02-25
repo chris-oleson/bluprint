@@ -56,7 +56,7 @@
                 <option v-for="(option, i) in options" :key="i">{{ option }}</option>
             </select>
             <input v-if="!editedItem.plaid_account_id" v-model="editedItem.quantity" type="text" class="text field" placeholder="Quantity">
-            <button class="primary button" @click="save">Save</button>
+            <button class="primary button" @click="save()">Save</button>
             <button class="simple button" @click="dialog.close()">Cancel</button>
         </div>
     </dialog>
@@ -124,7 +124,7 @@ function save () {
     } else {
         createData(editedItem.value)
     }
-    showDialog.value = false
+    dialog.value.close()
 }
 
 function deleteItemDialog (item) {

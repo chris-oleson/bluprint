@@ -32,7 +32,9 @@ async function verify() {
         navigateTo('/dashboard')
     }
     catch(error) {
-        errorMessage.value = error.message
+        if (error.response) {
+            errorMessage.value = error.response.statusText
+        }
         loading.value = false
     }
 }

@@ -13,6 +13,10 @@
 
 <script setup>
 useHead ({ title: 'Change Name - bluprint' })
+definePageMeta({
+    middleware: 'require-authentication',
+    layout: 'app-layout',
+})
 const store = useStore()
 const newName = ref('')
 const errorMessage = ref('')
