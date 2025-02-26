@@ -14,13 +14,8 @@ export default defineEventHandler(async event => {
         throw createError({ statusCode: 401, statusMessage: 'This account has not been verified' })
     }
 
-    let [
-        response,
-        sessionId,
-    ] = await Promise.all([
-        User.readPrefs(user.id, event.context.database),
-        Session.create(user.id, event.context.database)
-    ])
+    const response = await User.readPrefs(user.id, event.context.database)
+    const sessionId = await Session.create(user.id, event.context.database)
 
     response.name = user.name
     response.subscription_status = user.subscription_status
@@ -31,5 +26,5 @@ export default defineEventHandler(async event => {
     })
 
     User.updateLastLogin(user.id, event.context.database)
-    return { response }
+    return response
 })

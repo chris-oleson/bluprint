@@ -27,13 +27,10 @@
     async function login() {
         try {
             loading.value = true
-            const { response } = await $fetch('/api/auth/login', {
-                method: 'POST',
-                body: {
-                    email: email.value,
-                    password: password.value,
-                }
-            })
+            const response = await $fetch('/api/auth/login', { method: 'POST', body: {
+                email: email.value,
+                password: password.value,
+            }})
             store.isLoggedIn = true
             store.theme = response.theme
             store.allowEmails = response.allow_emails == 1

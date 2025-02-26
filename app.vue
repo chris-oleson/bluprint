@@ -11,7 +11,11 @@
 <script setup>
 const store = useStore()
 const colorMode = useColorMode()
-colorMode.preference = store.theme
+
+onMounted(() => {
+    colorMode.preference = store.theme
+})
+
 watch(() => store.theme, () => {
     colorMode.preference = store.theme
 })

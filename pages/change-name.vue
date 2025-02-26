@@ -25,7 +25,7 @@ const loading = ref(false)
 async function changeName () {
     try {
         loading.value = true
-        await $fetch('/api/auth/name', { method: 'PATCH', body: {
+        await $fetch('/api/user/name', { method: 'PATCH', body: {
             newName: newName.value,
         }})
         loading.value = false

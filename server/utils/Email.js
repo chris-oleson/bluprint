@@ -5,7 +5,7 @@ import Postmark from 'postmark'
 
 const client = process.env.POSTMARK_API_KEY ? new Postmark.ServerClient(process.env.POSTMARK_API_KEY) : null
 
-const from = "bluprint Support <support@bluprint.app>"
+const from = "bluprint Support <support@vufi.app>"
 const color = '#085292'
 
 export default {

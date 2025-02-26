@@ -39,7 +39,7 @@ export default {
                                             <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 2rem auto;">
                                                 <tr>
                                                     <td align="center" style="border-radius: .5rem;">
-                                                        <a href="${process.env.CLIENT_URL}/change-password?t=${token}" style="display: inline-block; color: #ffffff; text-decoration: none; padding: .5rem 1rem; border-radius: .5rem; background-color: #83af50; font-family: 'Roboto', Arial, sans-serif; letter-spacing: 1.25px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
+                                                        <a href="${process.env.BASE_URL}/change-password?t=${token}" style="display: inline-block; color: #ffffff; text-decoration: none; padding: .5rem 1rem; border-radius: .5rem; background-color: #83af50; font-family: 'Roboto', Arial, sans-serif; letter-spacing: 1.25px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
                                                             RESET PASSWORD
                                                         </a>
                                                     </td>
@@ -63,7 +63,7 @@ export default {
             \n
             Please follow the link below to reset your password:\n
             \n
-            ${process.env.CLIENT_URL}/change-password?t=${token}\n
+            ${process.env.BASE_URL}/change-password?t=${token}\n
             \n
             Thanks,\n
             Chris

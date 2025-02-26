@@ -25,7 +25,7 @@ const store = useStore()
 async function deleteAccount () {
     try {
         loading.value = true
-        await $fetch('/api/auth', { method: 'DELETE', body: {
+        await $fetch('/api/user', { method: 'DELETE', body: {
             password: password.value
         }})
         store.$reset()

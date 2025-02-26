@@ -3,9 +3,9 @@
     <div class="skinny form">
         <div>Appearance</div>
         <div class="horizontal button group">
-            <button class="border button" :class="{'selected': store.theme == 'system'}" @click="updateTheme('system')">System</button>
-            <button class="border button" :class="{'selected': store.theme == 'light'}" @click="updateTheme('light')">Light</button>
-            <button class="border button" :class="{'selected': store.theme == 'dark'}" @click="updateTheme('dark')">Dark</button>
+            <button class="border button" :class="{'selected': store.theme == 'system'}" @click="savePreferences('system')">System</button>
+            <button class="border button" :class="{'selected': store.theme == 'light'}" @click="savePreferences('light')">Light</button>
+            <button class="border button" :class="{'selected': store.theme == 'dark'}" @click="savePreferences('dark')">Dark</button>
         </div>
 
         <div>Account</div>
@@ -34,13 +34,9 @@ definePageMeta({
 })
 const store = useStore()
 
-function updateTheme(theme) {
-    store.theme = theme
-    savePreferences()
-}
-
-function savePreferences() {
-    $fetch('/api/auth/preferences', { method: 'PATCH', body: {
+function savePreferences(theme) {
+    if (theme) { store.theme = theme }
+    $fetch('/api/user/preferences', { method: 'PATCH', body: {
         theme: store.theme,
         allowEmails: store.allowEmails
     }})

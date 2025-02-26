@@ -12,6 +12,7 @@ useHead ({ title: 'Verify Email - bluprint' })
 const route = useRoute()
 const loading = ref(false)
 const errorMessage = ref('')
+const store = useStore()
 
 verify()
 
@@ -23,8 +24,11 @@ async function verify() {
             token: route.query.t,
             email: route.query.e
         }})
-        store.name = response.name
         store.isLoggedIn = true
+        store.theme = response.theme
+        store.allowEmails = response.allow_emails == 1
+        store.name = response.name
+        store.subscriptionStatus = response.subscription_status
         store.notification = {
             text: "Successfully verified email!",
             color: "var(--primary)"

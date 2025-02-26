@@ -51,7 +51,8 @@ const viewport = useViewport()
     display: flex;
     flex-direction: column;
     gap: .5em;
-    padding: 0 .5em;
+    padding: .5rem;
+    padding-top: 0;
 }
 .background.button {
     border-radius: .5rem;

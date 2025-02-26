@@ -2,12 +2,12 @@
 <div class="form card">
     <h2 class="title">Form Interface</h2>
 
-    <label class="label">Text Field
-        <input type="text" class="text field" placeholder="Placeholder">
-    </label>
-
     <div class="row">
         <div class="column">
+            <label class="label">Text Field
+                <input type="text" class="text field" placeholder="Placeholder">
+            </label>
+
             <label class="label">Dropdown
                 <select v-model="dropdown" required class="dropdown">
                     <option disabled hidden value="">Placeholder</option>

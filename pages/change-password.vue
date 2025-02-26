@@ -22,12 +22,12 @@
     const newPassword = ref('')
     const loading = ref(false)
     const errorMessage = ref('')
+    const store = useStore()
 
     async function changePassword() {
         try {
             loading.value = true
-            await $fetch('/api/auth/password', { method: 'PATCH', body: {
-                token: route.query.t,
+            await $fetch('/api/user/password', { method: 'PATCH', body: {
                 currentPassword: currentPassword.value,
                 newPassword: newPassword.value,
             }})
@@ -35,12 +35,7 @@
                 text: "Successfully updated password",
                 color: "var(--primary)"
             }
-            if (route.query.t) {
-                navigateTo('/sign-in')
-            }
-            else {
-                navigateTo('/dashboard')
-            }
+            navigateTo('/dashboard')
         }
         catch (error) {
             if (error.response) {
