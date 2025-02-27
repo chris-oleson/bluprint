@@ -14,57 +14,52 @@
 </template>
 
 <script setup>
-    useHead ({ title: 'Sign In - bluprint' })
-    definePageMeta({ middleware: 'skip-if-authenticated' })
+useHead ({ title: 'Sign In - bluprint' })
+definePageMeta({ middleware: 'skip-if-authenticated' })
+const route = useRoute()
+const email = ref('')
+const password = ref('')
+const errorMessage = ref('')
+const loading = ref(false)
+const store = useStore()
 
-    const route = useRoute()
-    const email = ref('')
-    const password = ref('')
-    const errorMessage = ref('')
-    const loading = ref(false)
-    const store = useStore()
-
-    async function login() {
-        try {
-            loading.value = true
-            const response = await $fetch('/api/auth/login', { method: 'POST', body: {
-                email: email.value,
-                password: password.value,
-            }})
-            store.isLoggedIn = true
-            store.theme = response.theme
-            store.allowEmails = response.allow_emails == 1
-            store.name = response.name
-            store.subscriptionStatus = response.subscription_status
-            store.notification = {
-                text: "Welcome " + store.name,
-                color: "var(--primary)"
-            }
-            navigateTo('/dashboard')
+async function login() {
+    try {
+        loading.value = true
+        const response = await $fetch('/api/auth/login', { method: 'POST', body: {
+            email: email.value,
+            password: password.value,
+        }})
+        store.isLoggedIn = true
+        store.theme = response.theme
+        store.allowEmails = response.allow_emails == 1
+        store.name = response.name
+        store.subscriptionStatus = response.subscription_status
+        store.notification = {
+            text: "Welcome " + store.name,
+            color: "var(--primary)"
         }
-        catch(error) {
-            if (error.response) {
-                errorMessage.value = error.response.statusText
-            }
-            loading.value = false
+        navigateTo('/dashboard')
+    }
+    catch(error) {
+        errorMessage.value = error.response ? error.response.statusText : error
+        loading.value = false
+    }
+}
+
+async function resend() {
+    try {
+        await $fetch('/api/auth/resend', { method: 'POST', body: {
+            email: email.value,
+        }})
+
+        store.notification = {
+            text: "Resent email verification",
+            color: "var(--primary)"
         }
     }
-
-    async function resend() {
-        try {
-            await $fetch('/api/auth/resend', { method: 'POST', body: {
-                email: email.value,
-            }})
-
-            store.notification = {
-                text: "Resent email verification",
-                color: "var(--primary)"
-            }
-        }
-        catch(error) {
-            if (error.response) {
-                errorMessage.value = error.response.statusText
-            }
-        }
+    catch(error) {
+        errorMessage.value = error.response ? error.response.statusText : error
     }
+}
 </script>

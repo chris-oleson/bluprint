@@ -37,11 +37,8 @@ async function changeName () {
         navigateTo('/dashboard')
     }
     catch(error) {
-        if (error.response) {
-            errorMessage.value = error.response.statusText
-        }
+        errorMessage.value = error.response ? error.response.statusText : error
+        loading.value = false
     }
-
-    loading.value = false
 }
 </script>

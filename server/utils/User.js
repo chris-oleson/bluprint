@@ -11,7 +11,7 @@ export default {
         email = email.toLowerCase()
         const hashedPassword = await Password.hash(plainTextPassword)
         const [newUser] = await databaseConnection.query("INSERT INTO users VALUES (NULL, ?, ?, ?, CURRENT_DATE(), NULL, 'free', 0)", [email, hashedPassword, name])
-        await databaseConnection.query("INSERT INTO user_preferences VALUES (NULL, 'system', 'USD', 5, 1, ?)", [newUser.insertId])
+        await databaseConnection.query("INSERT INTO user_preferences VALUES (NULL, 'system', 1, ?)", [newUser.insertId])
         const tokenId = await EmailToken.create(newUser.insertId, databaseConnection)
         if (process.env.POSTMARK_API_KEY) {
             Email.sendEmailVerification(name, email, tokenId)
@@ -46,7 +46,7 @@ export default {
     },
 
     async updatePrefs(userId, userPrefs, databaseConnection) {
-        await databaseConnection.query("UPDATE user_preferences SET theme = ?, currency = ?, items_per_page = ?, allow_emails = ? WHERE user_id = ?", [userPrefs.theme, userPrefs.currency, userPrefs.itemsPerPage, userPrefs.allowEmails, userId])
+        await databaseConnection.query("UPDATE user_preferences SET theme = ?, allow_emails = ? WHERE user_id = ?", [userPrefs.theme, userPrefs.allowEmails, userId])
     },
 
     async updateLastLogin(userId, databaseConnection) {

@@ -37,9 +37,7 @@ async function changeEmail () {
         sentVerification.value = true
     }
     catch(error) {
-        if (error.response) {
-            errorMessage.value = error.response.statusText
-        }
+        errorMessage.value = error.response ? error.response.statusText : error
     }
 
     loading.value = false

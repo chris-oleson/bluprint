@@ -40,13 +40,11 @@ async function createAccount() {
             password: password.value,
         }})
         accountCreated.value = true
+        loading.value = false
     }
     catch(error) {
-        if (error.response) {
-            errorMessage.value = error.response.statusText
-        }
+        errorMessage.value = error.response ? error.response.statusText : error
+        loading.value = false
     }
-
-    loading.value = false
 }
 </script>

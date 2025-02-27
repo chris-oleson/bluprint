@@ -1,7 +1,7 @@
 <template>
 <div>
     <app-header/>
-    <side-bar/>
+    <app-sidebar/>
     <div class="content" :class="{'sidebar': viewport.isGreaterThan('tablet')}">
         <slot/>
     </div>

@@ -17,9 +17,8 @@ const store = useStore()
 verify()
 
 async function verify() {
-    loading.value = true
-
     try {
+        loading.value = true
         const response = await $fetch('/api/auth/verify', { method: 'POST', body: {
             token: route.query.t,
             email: route.query.e
@@ -36,9 +35,7 @@ async function verify() {
         navigateTo('/dashboard')
     }
     catch(error) {
-        if (error.response) {
-            errorMessage.value = error.response.statusText
-        }
+        errorMessage.value = error.response ? error.response.statusText : error
         loading.value = false
     }
 }
