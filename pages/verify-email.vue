@@ -19,7 +19,7 @@ verify()
 async function verify() {
     try {
         loading.value = true
-        const response = await $fetch('/api/auth/verify', { method: 'POST', body: {
+        const response = await $fetch('/api/auth/verify-email', { method: 'POST', body: {
             token: route.query.t,
             email: route.query.e
         }})

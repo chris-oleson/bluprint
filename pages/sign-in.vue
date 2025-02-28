@@ -49,7 +49,7 @@ async function login() {
 
 async function resend() {
     try {
-        await $fetch('/api/auth/resend', { method: 'POST', body: {
+        await $fetch('/api/auth/resend-verification', { method: 'POST', body: {
             email: email.value,
         }})
 
