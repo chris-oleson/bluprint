@@ -1,9 +1,9 @@
 /* Fonts */
 @font-face {
-    font-family: "Ubuntu Sans";
-    font-weight: 100 800;
+    font-family: "Roboto";
+    font-weight: 100 900;
     font-display: swap;
-    src: url(/fonts/ubuntu-sans-variable.ttf);
+    src: url(/fonts/roboto-variable.ttf);
 }
 
 /* Light mode theme */
@@ -38,7 +38,7 @@
 /* Global defaults */
 * {
     box-sizing: border-box;
-    font-family: 'Ubuntu Sans', 'Ubuntu', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Roboto', 'Ubuntu', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 400;
 }
 
@@ -47,25 +47,26 @@ body {
     background-color: var(--background);
 }
 
+div {
+    font-size: 1rem;
+    &.error {
+        color: var(--error)
+    }
+}
+
 /* Text */
 .title {
-    font-size: 3em;
-    font-weight: 500;
+    font-size: 3rem;
+    font-weight: 900;
     color: var(--text);
     margin: 0;
 }
 
 .subtitle {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    font-weight: 500;
     color: var(--text);
     margin: 0;
-}
-
-div {
-    font-size: 1em;
-    &.error {
-        color: var(--error)
-    }
 }
 
 /* Images */
@@ -79,7 +80,7 @@ div {
     letter-spacing: 1.25px;
     display: block;
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     text-wrap: nowrap;
     text-align: center;
@@ -317,6 +318,21 @@ div {
     & .iconify {
         --icon-size: 2rem;
     }
+}
+
+.header {
+    background-color: var(--background);
+    height: var(--header-height);
+    z-index: 20;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    gap: 3rem;
+    padding: 0 1rem;
 }
 
 /* Groups */

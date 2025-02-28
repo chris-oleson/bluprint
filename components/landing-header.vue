@@ -1,5 +1,5 @@
 <template>
-<header>
+<header class="header">
     <nuxt-link class="logo link" to="/">
         <img src="../assets/images/logo.png" height="42" width="42" alt="bluprint logo">
         <h2 class="subtitle">bluprint</h2>
@@ -16,11 +16,11 @@
 
     <template v-if="store.isLoggedIn">
         <nuxt-link to="/dashboard" class="simple button">Dashboard</nuxt-link>
-        <button class="simple button" @click="store.logOut('/')">Sign Out</button>
+        <button class="simple button" style="margin-right: 1rem;" @click="store.logOut('/')">Sign Out</button>
     </template>
     <template v-else>
         <nuxt-link to="/sign-in" class="simple button">Sign In</nuxt-link>
-        <nuxt-link to="/sign-up" class="primary button">Sign Up</nuxt-link>
+        <nuxt-link to="/sign-up" class="primary button" style="margin-right: 1rem;">Sign Up</nuxt-link>
     </template>
 </header>
 </template>
@@ -30,21 +30,6 @@ const store = useStore()
 </script>
 
 <style scoped>
-header {
-    background-color: var(--background);
-    height: var(--header-height);
-    z-index: 20;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    gap: 3em;
-    padding: 0 1em;
-}
-
 .logo {
     display: flex;
     align-items: center;

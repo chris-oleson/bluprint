@@ -16,6 +16,12 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
-        '@nuxt/eslint'
-    ]
+        '@nuxt/eslint',
+        'nuxt-security'
+    ],
+    security: {
+        headers: {
+            contentSecurityPolicy: false
+        },
+    }
 })
