@@ -9,5 +9,5 @@
 
 <script setup>
 useHead ({ title: 'Contact - bluprint' })
-const email = 'support@bluprint.app'
+const email = 'chris@oleson.family'
 </script>
