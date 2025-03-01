@@ -13,16 +13,16 @@
     </div>
 
     <div class="secondary section">
-        <h2 class="title">Built-in Authentication</h2>
+        <h2 class="title">Built-in Features</h2>
         <h2 class="subtitle">
-            bluprint already has a full backend with authentication and a database
+            bluprint already has a lightweight CSS framework, authentication, email verification, a database, and Stripe integration
         </h2>
     </div>
 
     <div class="section">
         <h2 class="title">Easily Customizable</h2>
         <h2 class="subtitle">
-            With an intuitive css layout, it's easy to make global UI changes
+            Using an opinionated framework like Nuxt, bluprint is simple to modify to your specific needs
         </h2>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <template>
 <div class="section">
-    <h1 class="title">Contact Us</h1>
-    <div>Have a question, bug report, or feature suggestion? Send us an email at
+    <h1 class="title">Contact Me</h1>
+    <div>Have a question, bug report, or feature suggestion? Send me an email at
         <a class="link" :href="'mailto:' + email">{{ email }}</a>
     </div>
 </div>
