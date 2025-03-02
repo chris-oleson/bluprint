@@ -1,7 +1,7 @@
 <template>
 <header class="header">
     <nuxt-link class="logo link" to="/">
-        <img src="../assets/images/logo.png" height="42" width="42" alt="bluprint logo">
+        <nuxt-img src="/images/logo.png" height="42" width="42" alt="bluprint logo"/>
         <h2 class="subtitle">bluprint</h2>
     </nuxt-link>
 

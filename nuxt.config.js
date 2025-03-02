@@ -17,7 +17,8 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
         '@nuxt/eslint',
-        'nuxt-security'
+        'nuxt-security',
+        '@nuxt/image'
     ],
     security: {
         headers: {
