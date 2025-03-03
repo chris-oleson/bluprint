@@ -6,7 +6,13 @@ export default defineNuxtConfig({
         head: {
             link: [
                 { rel: 'icon', type: 'image/png', href: '/favicon.png' }
-            ]
+            ],
+            meta: [
+                { name: 'description', content: 'A SaaS boilerplate from Chris Oleson' }
+            ],
+            htmlAttrs: {
+                lang: 'en'
+            }
         }
     },
     css: ['/assets/style.css'],
