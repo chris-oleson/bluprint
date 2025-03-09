@@ -1,6 +1,6 @@
 <template>
 <div class="form card">
-    <h2 class="title">Form Interface</h2>
+    <h2>Form Interface</h2>
 
     <div class="row">
         <div class="column">

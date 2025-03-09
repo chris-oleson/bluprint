@@ -1,7 +1,7 @@
 <template>
 <div class="card">
     <div class="toolbar">
-        <h2 class="title">{{ title }}</h2>
+        <h2>{{ title }}</h2>
         <div class="horizontal spacer"/>
         <button class="border icon button" title="Add" @click="newItem()">
             <Icon name="mdi:plus"/>
@@ -49,7 +49,7 @@
     <!-- Add or edit asset dialog -->
     <dialog ref='dialog' class="dialog" @click.self="dialog.close()">
         <div class="form card">
-            <h2 class="subtitle">New Item</h2>
+            <h3>New Item</h3>
             <input v-model="editedItem.name" type="text" class="text field" placeholder="Name">
             <select v-model="editedItem.type" class="dropdown" required>
                 <option disabled hidden value="">Type</option>

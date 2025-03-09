@@ -1,6 +1,6 @@
 <template>
 <div class="card">
-    <h2 class="title">{{ title }}</h2>
+    <h2>{{ title }}</h2>
 
     <template v-if="data && data.length">
         <table>

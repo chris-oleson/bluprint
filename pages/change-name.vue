@@ -2,7 +2,7 @@
 <div class="full height section">
     <div v-if="loading" class="loading spinner"/>
     <div v-else class="skinny form">
-        <h1 class="subtitle">Change Name</h1>
+        <h2>Change Name</h2>
         <div style="text-align: start;">Current name: {{ store.name }}</div>
         <input v-model="newName" type="text" class="big text field" :class="{'error': errorMessage}" placeholder="New name" @keyup.enter="changeName">
         <div v-if="errorMessage" class="error">{{ errorMessage }}</div>

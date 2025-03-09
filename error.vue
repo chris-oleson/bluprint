@@ -1,10 +1,10 @@
 <template>
-<NuxtLayout>
+<nuxt-layout>
     <div class="full height section">
-        <h1 class="title">{{ error.message }}</h1>
+        <h1>{{ error.message }}</h1>
         <nuxt-link class="big primary button" to="/">Return to home page</nuxt-link>
     </div>
-</NuxtLayout>
+</nuxt-layout>
 </template>
 
 <script setup>

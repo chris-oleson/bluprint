@@ -2,7 +2,7 @@
 <header class="header">
     <nuxt-link class="logo link" to="/">
         <nuxt-img src="/images/logo.png" height="42" width="42" alt="bluprint logo"/>
-        <h2 class="subtitle">bluprint</h2>
+        <h3>bluprint</h3>
     </nuxt-link>
 
     <div class="horizontal spacer"/>

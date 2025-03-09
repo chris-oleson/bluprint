@@ -2,8 +2,8 @@
 <div>
     <div class="above-fold">
         <div class="call-to-action">
-            <h1 class="title">Jumpstart Your New App</h1>
-            <h2 class="subtitle">The boring parts are already done!</h2>
+            <h1>Jumpstart Your New App</h1>
+            <h3>The boring parts are already done!</h3>
             <nuxt-link class="big primary button" to="/sign-up">Get Started Today!</nuxt-link>
         </div>
 
@@ -13,17 +13,17 @@
     </div>
 
     <div class="secondary section">
-        <h2 class="title">Built-in Features</h2>
-        <h2 class="subtitle">
+        <h2>Built-in Features</h2>
+        <h3>
             bluprint already has a lightweight CSS framework, authentication, email verification, a database, and Stripe integration
-        </h2>
+        </h3>
     </div>
 
     <div class="section">
-        <h2 class="title">Easily Customizable</h2>
-        <h2 class="subtitle">
+        <h2>Easily Customizable</h2>
+        <h3>
             Using an opinionated framework like Nuxt, bluprint is simple to modify to your specific needs
-        </h2>
+        </h3>
     </div>
 </div>
 </template>
@@ -35,7 +35,6 @@ useHead ({ title: 'bluprint' })
 <style scoped>
 .section {
     padding: 10em 1em;
-    gap: 3em;
 }
 
 .above-fold {
@@ -56,15 +55,19 @@ useHead ({ title: 'bluprint' })
         margin: auto;
         text-wrap: wrap;
     }
-    & .title {
+    & h1 {
         font-size: 4em;
     }
-    & .subtitle {
-        margin: 2em 0;
+    & h3 {
+        margin: 3rem 0;
     }
     @media (max-width: 1280px) {
         flex: 100%;
     }
+}
+
+h3 {
+    text-align: center;
 }
 
 .card {

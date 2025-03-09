@@ -1,7 +1,7 @@
 <template>
-<NuxtLayout>
-    <NuxtPage/>
-</NuxtLayout>
+<nuxt-layout>
+    <nuxt-page/>
+</nuxt-layout>
 
 <div v-if="showNotification" class="notification">
     <div class="card" :style="'background-color: ' + store.notification.color">{{ store.notification.text }}</div>

@@ -2,7 +2,7 @@
 <div class="full height section">
     <div v-if="loading" class="loading spinner"/>
     <div v-else class="skinny form">
-        <h1 class="subtitle">Change Password</h1>
+        <h2>Change Password</h2>
         <input v-model="newPassword" type="password" class="big text field" :class="{'error': errorMessage}" placeholder="New password" @keyup.enter="resetPassword">
         <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
         <button class="big primary button" @click="resetPassword()">Submit</button>
