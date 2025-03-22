@@ -8,7 +8,7 @@
         </div>
 
         <div class="card">
-            <nuxt-img class="image" src="/images/bluprint.webp"/>
+            <nuxt-img src="/images/bluprint.webp"/>
         </div>
     </div>
 

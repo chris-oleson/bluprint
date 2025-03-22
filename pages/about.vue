@@ -7,7 +7,7 @@
         </p>
     </div>
 
-    <div class="faq section">
+    <div class="section">
         <h2>FAQ</h2>
         <div>
             <h3>What is bluprint?</h3>
